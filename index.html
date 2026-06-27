@@ -16,8 +16,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 .tab:hover:not(.active){background:#EAF3DE}
 .section{display:none}
 .section.active{display:block}
-.vid-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+
+/* Cards */
+.vid-grid,.game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
 .vid-card,.game-card{background:#fff;border:2px solid #e0ecd0;border-radius:12px;overflow:hidden;cursor:pointer}
 .vid-card:hover{border-color:#3B6D11}
 .game-card{padding:1.25rem 1rem;text-align:center}
@@ -29,10 +30,19 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 .game-icon{font-size:38px;margin-bottom:8px}
 .game-card p{font-size:14px;font-weight:600;color:#222;margin-bottom:3px}
 .game-card span{font-size:12px;color:#666}
-.coming{display:inline-block;background:#EAF3DE;color:#3B6D11;font-size:11px;padding:2px 8px;border-radius:8px;margin-top:4px;font-weight:600}
+.special-card{background:linear-gradient(135deg,#EAF3DE,#E6F1FB);border:2px solid #3B6D11}
+.special-card:hover{border-color:#185FA5}
+
+/* Stories */
+.story-toolbar{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap;align-items:center}
+.story-filter{padding:6px 14px;border-radius:16px;border:2px solid #e0ecd0;background:#fff;color:#555;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.story-filter.active{background:#185FA5;border-color:#185FA5;color:#fff}
+.surprise-btn{padding:8px 18px;border-radius:20px;border:2px solid #3B6D11;background:#3B6D11;color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;margin-left:auto}
+.surprise-btn:hover{background:#27500A}
 .story-list{display:flex;flex-direction:column;gap:10px}
 .story-card{background:#fff;border:2px solid #e0ecd0;border-radius:12px;padding:1rem 1.25rem;cursor:pointer;display:flex;align-items:center;gap:14px}
 .story-card:hover{border-color:#185FA5}
+.story-card.hidden{display:none}
 .story-icon{font-size:28px;flex-shrink:0}
 .story-card h3{font-size:15px;font-weight:600;color:#222;margin-bottom:2px}
 .story-card p{font-size:13px;color:#555}
@@ -40,6 +50,22 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 .story-back{background:#EAF3DE;border:none;color:#3B6D11;font-weight:600;font-size:14px;padding:8px 16px;border-radius:20px;cursor:pointer;margin-bottom:1rem;font-family:inherit}
 .story-title{font-size:20px;font-weight:700;color:#222;margin-bottom:1rem}
 .story-text{font-size:15px;line-height:1.9;color:#333;white-space:pre-wrap}
+
+/* Search */
+.search-box-wrap{background:#fff;border-radius:16px;padding:1.5rem;border:2px solid #e0ecd0;margin-bottom:1rem}
+.search-box-wrap h2{font-size:18px;font-weight:700;color:#222;margin-bottom:.5rem}
+.search-box-wrap p{font-size:14px;color:#666;margin-bottom:1rem}
+.search-row{display:flex;gap:8px}
+.search-input{flex:1;padding:10px 14px;border-radius:20px;border:2px solid #e0ecd0;font-size:15px;font-family:inherit;outline:none}
+.search-input:focus{border-color:#3B6D11}
+.search-btn{padding:10px 20px;border-radius:20px;background:#3B6D11;color:#fff;font-weight:700;font-size:14px;border:none;cursor:pointer;font-family:inherit}
+.search-btn:hover{background:#27500A}
+.quick-searches{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}
+.quick-chip{padding:6px 14px;border-radius:16px;background:#EAF3DE;color:#27500A;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:inherit}
+.quick-chip:hover{background:#C0DD97}
+.search-note{font-size:12px;color:#999;margin-top:.75rem}
+
+/* About */
 .about-card{background:#fff;border:2px solid #e0ecd0;border-radius:12px;padding:1.5rem}
 .about-card h2{font-size:18px;font-weight:700;color:#222;margin-bottom:1rem}
 .tag-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1rem}
@@ -49,40 +75,42 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 .achievement span{font-size:22px}
 .achievement p{font-size:13px;color:#333;font-weight:500}
 
-/* Modal overlay */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:999;padding:1rem;align-items:flex-start;justify-content:center;overflow-y:auto}
+/* Modal */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:999;padding:1rem;align-items:flex-start;justify-content:center;overflow-y:auto}
 .modal-bg.open{display:flex}
-.modal-box{background:#fff;border-radius:16px;width:100%;max-width:640px;overflow:hidden;margin:auto}
+.modal-box{background:#fff;border-radius:16px;width:100%;max-width:680px;overflow:hidden;margin:auto}
 .modal-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1a1a1a}
 .modal-header-title{color:#fff;font-size:15px;font-weight:700}
 .modal-close{background:none;border:none;color:#ccc;font-size:26px;cursor:pointer;line-height:1;padding:0 4px}
 .modal-close:hover{color:#fff}
-
-/* YouTube embed inside modal */
-.yt-wrap{position:relative;padding-bottom:56.25%;height:0;background:#000}
-.yt-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
-
-/* Game embed inside modal */
-.game-wrap{position:relative;width:100%;height:480px;background:#111}
+.game-wrap{width:100%;height:500px;background:#111}
 .game-wrap iframe{width:100%;height:100%;border:none}
-
-/* Simple link modal (fallback) */
 .link-modal-body{padding:2rem 1.5rem;text-align:center}
 .link-modal-emoji{font-size:52px;margin-bottom:1rem}
 .link-modal-desc{font-size:15px;color:#444;line-height:1.6;margin-bottom:1.5rem}
 .link-modal-btn{display:inline-block;background:#185FA5;color:#fff;font-weight:700;font-size:15px;padding:12px 28px;border-radius:24px;text-decoration:none;font-family:inherit}
-.link-modal-btn:hover{background:#0C447C}
 .link-modal-btn.green{background:#3B6D11}
-.link-modal-btn.green:hover{background:#27500A}
+
+/* Drawing tool */
+.draw-wrap{background:#fff;padding:0}
+.draw-toolbar{display:flex;gap:8px;padding:10px 12px;background:#f8f8f8;border-bottom:1px solid #eee;flex-wrap:wrap;align-items:center}
+.draw-toolbar label{font-size:12px;color:#555;font-weight:600}
+.color-btn{width:28px;height:28px;border-radius:50%;border:3px solid transparent;cursor:pointer;flex-shrink:0}
+.color-btn.active{border-color:#333}
+.size-btn{padding:4px 10px;border-radius:10px;border:2px solid #ddd;background:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+.size-btn.active{background:#3B6D11;color:#fff;border-color:#3B6D11}
+.draw-action{padding:6px 14px;border-radius:10px;border:2px solid #ddd;background:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+.draw-action:hover{border-color:#3B6D11;color:#3B6D11}
+.draw-action.red{border-color:#E24B4A;color:#E24B4A}
+#drawCanvas{display:block;width:100%;cursor:crosshair;touch-action:none}
 </style>
 </head>
 <body>
 
-<!-- Universal modal -->
 <div class="modal-bg" id="modal">
-  <div class="modal-box" id="modal-box">
+  <div class="modal-box">
     <div class="modal-header">
-      <span class="modal-header-title" id="modal-title">-</span>
+      <span class="modal-header-title" id="modal-title"></span>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div id="modal-content"></div>
@@ -93,72 +121,86 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
   <h1>Maceo's Place</h1>
   <p>Your personal spot to learn, play, and explore</p>
 </div>
+
 <div class="tabs">
   <button class="tab active" onclick="showTab('videos',this)">Videos</button>
   <button class="tab" onclick="showTab('games',this)">Games</button>
   <button class="tab" onclick="showTab('stories',this)">Stories</button>
+  <button class="tab" onclick="showTab('search',this)">Search</button>
   <button class="tab" onclick="showTab('about',this)">About Me</button>
 </div>
 
+<!-- VIDEOS -->
 <div id="videos" class="section active">
   <div class="vid-grid">
-    <div class="vid-card" onclick="openYT('MrBeast','UCX6OQ3DkcsbYNE6H8uQQuVA')">
+    <div class="vid-card" onclick="openLink('MrBeast','🎯','The latest MrBeast videos — crazy challenges, big giveaways, and wild stunts!','https://www.youtube.com/@MrBeast','Watch MrBeast','')">
       <div class="vid-thumb" style="background:#EAF3DE">🎯</div>
       <div class="vid-info"><p>MrBeast</p><span>Latest videos</span></div>
     </div>
-    <div class="vid-card" onclick="openYT('Roblox','UCsHmUPOKFHHPJKaLJi8gdlg')">
+    <div class="vid-card" onclick="openLink('Roblox','🎮','Search for the best Roblox gameplay videos!','https://www.youtube.com/results?search_query=roblox+gameplay+2025','Search YouTube','')">
       <div class="vid-thumb" style="background:#E6F1FB">🎮</div>
       <div class="vid-info"><p>Roblox</p><span>Gameplay clips</span></div>
     </div>
-    <div class="vid-card" onclick="openLink('Milo and Chip','🐾','Search for Milo and Chip episodes on YouTube!','https://www.youtube.com/results?search_query=milo+and+chip+show','Search YouTube','blue')">
+    <div class="vid-card" onclick="openLink('Milo and Chip','🐾','Find Milo and Chip episodes on YouTube!','https://www.youtube.com/results?search_query=milo+and+chip+show','Watch Now','')">
       <div class="vid-thumb" style="background:#FAEEDA">🐾</div>
       <div class="vid-info"><p>Milo and Chip</p><span>Watch now</span></div>
     </div>
-    <div class="vid-card" onclick="openLink('Grizzy & Lemmings','🐻','Search for Grizzy and the Lemmings on YouTube!','https://www.youtube.com/results?search_query=grizzy+and+the+lemmings','Search YouTube','blue')">
+    <div class="vid-card" onclick="openLink('Grizzy & Lemmings','🐻','Watch Grizzy and the Lemmings on YouTube!','https://www.youtube.com/results?search_query=grizzy+and+the+lemmings','Watch Now','')">
       <div class="vid-thumb" style="background:#EAF3DE">🐻</div>
       <div class="vid-info"><p>Grizzy & Lemmings</p><span>Watch now</span></div>
     </div>
-    <div class="vid-card" onclick="openYT('Nick DiGiovanni','UCEs-ozOh9M-C7aRMbOEvQ1A')">
+    <div class="vid-card" onclick="openLink('Nick DiGiovanni','👨‍🍳','Watch Nick DiGiovanni make amazing food — from tiny dishes to giant feasts!','https://www.youtube.com/@NickDiGiovanni','Watch Now','')">
       <div class="vid-thumb" style="background:#FAECE7">👨‍🍳</div>
       <div class="vid-info"><p>Nick DiGiovanni</p><span>Food & cooking</span></div>
     </div>
   </div>
 </div>
 
+<!-- GAMES -->
 <div id="games" class="section">
   <div class="game-grid">
-    <div class="game-card" onclick="openGame('Run 3','https://www.coolmathgames.com/0-run-3/play')">
-      <div class="game-icon">🏃</div><p>Run 3</p><span>Space runner</span>
+    <div class="game-card" onclick="openGame('Raft Wars 2','🚢','Defend your raft! Aim and shoot to knock enemies into the water.','https://html5.gamedistribution.com/raft-wars-2/')">
+      <div class="game-icon">🚢</div><p>Raft Wars 2</p><span>Shooting game</span>
     </div>
-    <div class="game-card" onclick="openGame('2048','https://play2048.co/')">
+    <div class="game-card" onclick="openGame('Basket & Ball','🏀','Bounce the basketball into the hoop. Use the walls, boxes, and springs!','https://html5.gamedistribution.com/basket-and-ball/')">
+      <div class="game-icon">🏀</div><p>Basket & Ball</p><span>Basketball puzzle</span>
+    </div>
+    <div class="game-card" onclick="openGame('2048','🔢','Add numbers together to make 2048. Easy to learn, hard to stop!','https://play2048.co/')">
       <div class="game-icon">🔢</div><p>2048</p><span>Number puzzle</span>
     </div>
-    <div class="game-card" onclick="openGame('Snake','https://www.coolmathgames.com/0-snake/play')">
-      <div class="game-icon">🐍</div><p>Snake</p><span>Classic arcade</span>
+    <div class="game-card" onclick="openGame('Lego Junkbot','🤖','Help Junkbot eat all the trash on every level. A real Lego game!','https://html5.gamedistribution.com/junkbot/')">
+      <div class="game-icon">🤖</div><p>Lego Junkbot</p><span>Lego puzzle</span>
     </div>
-    <div class="game-card" onclick="openLink('Chess','♟️','Play chess against the computer. Pick easy mode to start!','https://www.chess.com/play/computer','Play Chess','green')">
+    <div class="game-card" onclick="openGame('Chess','♟️','Play chess against the computer. Pick easy mode to start!','https://lichess.org/embed/new?bg=light&theme=green')">
       <div class="game-icon">♟️</div><p>Chess</p><span>Strategy</span>
     </div>
-    <div class="game-card" onclick="openGame('Fireboy & Watergirl','https://www.coolmathgames.com/0-fireboy-and-watergirl-in-the-forest-temple/play')">
-      <div class="game-icon">🔥</div><p>Fireboy & Watergirl</p><span>Team puzzle</span>
-    </div>
-    <div class="game-card">
-      <div class="game-icon">🛠️</div><p>Maceo's Game</p>
-      <div class="coming">Coming soon</div>
+    <div class="game-card special-card" onclick="openDraw()">
+      <div class="game-icon">🎨</div><p>Maceo's Drawing Studio</p><span>Draw anything!</span>
     </div>
   </div>
 </div>
 
+<!-- STORIES -->
 <div id="stories" class="section">
-  <div id="story-list" class="story-list">
-    <div class="story-card" onclick="readStory('bolt')"><div class="story-icon">🤖</div><div><h3>The Lego Robot Gone Wild</h3><p>What if your build came to life?</p></div></div>
-    <div class="story-card" onclick="readStory('adventure')"><div class="story-icon">🏝️</div><div><h3>Island of a Thousand Legos</h3><p>Islands, treasure, and an epic quest</p></div></div>
-    <div class="story-card" onclick="readStory('basketball')"><div class="story-icon">🏀</div><div><h3>Animal All-Stars</h3><p>Bears, cheetahs, and a very confused giraffe</p></div></div>
-    <div class="story-card" onclick="readStory('space')"><div class="story-icon">🚀</div><div><h3>The Kid Who Swam in Space</h3><p>Cannonball on Saturn?</p></div></div>
-    <div class="story-card" onclick="readStory('pool')"><div class="story-icon">🏊</div><div><h3>The Pool That Went Sideways</h3><p>A swim race against a dolphin</p></div></div>
-    <div class="story-card" onclick="readStory('art')"><div class="story-icon">🎨</div><div><h3>The Drawing That Walked Off</h3><p>When your art has other ideas</p></div></div>
-    <div class="story-card" onclick="readStory('pickleball')"><div class="story-icon">🏓</div><div><h3>The Pickleball Robot Tournament</h3><p>Robots. Pickleballs. Total chaos.</p></div></div>
-    <div class="story-card" onclick="readStory('statue')"><div class="story-icon">🗽</div><div><h3>The Night the Statue of Liberty Moved</h3><p>His best build had other plans</p></div></div>
+  <div id="story-list-wrap">
+    <div class="story-toolbar">
+      <button class="story-filter active" onclick="filterStories('all',this)">All</button>
+      <button class="story-filter" onclick="filterStories('funny',this)">Funny</button>
+      <button class="story-filter" onclick="filterStories('adventure',this)">Adventure</button>
+      <button class="story-filter" onclick="filterStories('animals',this)">Animals</button>
+      <button class="story-filter" onclick="filterStories('space',this)">Space</button>
+      <button class="surprise-btn" onclick="surpriseStory()">Surprise me!</button>
+    </div>
+    <div class="story-list" id="story-list">
+      <div class="story-card" data-tags="funny,lego" onclick="readStory('bolt')"><div class="story-icon">🤖</div><div><h3>The Lego Robot Gone Wild</h3><p>What if your build came to life?</p></div></div>
+      <div class="story-card" data-tags="adventure,lego" onclick="readStory('adventure')"><div class="story-icon">🏝️</div><div><h3>Island of a Thousand Legos</h3><p>Islands, treasure, and an epic quest</p></div></div>
+      <div class="story-card" data-tags="funny,animals" onclick="readStory('basketball')"><div class="story-icon">🏀</div><div><h3>Animal All-Stars</h3><p>Bears, cheetahs, and a very confused giraffe</p></div></div>
+      <div class="story-card" data-tags="space,adventure" onclick="readStory('space')"><div class="story-icon">🚀</div><div><h3>The Kid Who Swam in Space</h3><p>Cannonball on Saturn?</p></div></div>
+      <div class="story-card" data-tags="funny,animals" onclick="readStory('pool')"><div class="story-icon">🏊</div><div><h3>The Pool That Went Sideways</h3><p>A swim race against a dolphin</p></div></div>
+      <div class="story-card" data-tags="funny,adventure" onclick="readStory('art')"><div class="story-icon">🎨</div><div><h3>The Drawing That Walked Off</h3><p>When your art has other ideas</p></div></div>
+      <div class="story-card" data-tags="funny" onclick="readStory('pickleball')"><div class="story-icon">🏓</div><div><h3>The Pickleball Robot Tournament</h3><p>Robots. Pickleballs. Total chaos.</p></div></div>
+      <div class="story-card" data-tags="adventure,lego" onclick="readStory('statue')"><div class="story-icon">🗽</div><div><h3>The Night the Statue of Liberty Moved</h3><p>His best build had other plans</p></div></div>
+    </div>
   </div>
   <div id="story-view" class="story-view">
     <button class="story-back" onclick="backToStories()">← Back to stories</button>
@@ -167,6 +209,30 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
   </div>
 </div>
 
+<!-- SEARCH -->
+<div id="search" class="section">
+  <div class="search-box-wrap">
+    <h2>Safe Search</h2>
+    <p>Search for anything! Kid-friendly results only.</p>
+    <div class="search-row">
+      <input class="search-input" id="search-input" type="text" placeholder="What do you want to learn about?" onkeydown="if(event.key==='Enter')doSearch()">
+      <button class="search-btn" onclick="doSearch()">Search!</button>
+    </div>
+    <div class="quick-searches">
+      <button class="quick-chip" onclick="quickSearch('how do sharks swim')">How do sharks swim?</button>
+      <button class="quick-chip" onclick="quickSearch('fun facts about space')">Space facts</button>
+      <button class="quick-chip" onclick="quickSearch('how to draw a dragon step by step')">Draw a dragon</button>
+      <button class="quick-chip" onclick="quickSearch('cool Lego building ideas')">Lego ideas</button>
+      <button class="quick-chip" onclick="quickSearch('how do volcanoes work')">Volcanoes</button>
+      <button class="quick-chip" onclick="quickSearch('basketball trick shots')">Basketball tricks</button>
+      <button class="quick-chip" onclick="quickSearch('funny animal videos')">Funny animals</button>
+      <button class="quick-chip" onclick="quickSearch('how to do jump rope tricks')">Jump rope tricks</button>
+    </div>
+    <p class="search-note">Safe search is always on. Opens in a new tab.</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
 <div id="about" class="section">
   <div class="about-card">
     <h2>About Maceo</h2>
@@ -184,16 +250,17 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 
 <script>
 var stories={
-bolt:{title:"The Lego Robot Gone Wild 🤖",text:"Maceo had been building all day long.\n\nSnack wrappers were everywhere. Three instruction books were open on the floor. One piece was bent a little because he pushed it in the wrong way — but he was NOT going back to fix it.\n\nThen — CLICK. The last piece snapped in.\n\nThe robot was eight inches tall. Green and blue. One arm was a little longer than the other because Maceo ran out of the right pieces. He named it Bolt.\n\n\"Cool,\" said Maceo. He went to get a snack.\n\nThat's when Bolt's eyes lit up.\n\n---\n\nWhen Maceo came back, Bolt had sorted every single Lego piece by color.\n\nAll of them. In eleven minutes.\n\n\"Whoa,\" said Maceo.\n\nBolt beeped. It was a happy beep.\n\n\"Okay, but don't touch anything else,\" Maceo said.\n\nBolt beeped again. This beep sounded like: sure, no problem, I won't touch a thing.\n\nBolt was lying.\n\n---\n\nThe next morning, Maceo went downstairs.\n\nEvery cup in the kitchen was sorted by size. The forks were with the forks. The knives were with the knives.\n\nBut the spoons? The spoons had been moved to their own drawer. And on the drawer — made out of tiny Lego flag pieces — was a label that said: SOUP TOOLS.\n\nDad stared at it for a long time.\n\n\"Did you do this?\"\n\"Bolt did it.\"\n\"The Lego robot.\"\n\"He really likes to organize.\"\n\nDad opened the SOUP TOOLS drawer. Looked at the spoons. Closed it.\n\n\"Okay,\" he said quietly. And went to make coffee.\n\n---\n\nThings got worse.\n\nBy Wednesday, Bolt had put all of Maceo's Pokemon cards in a new order. Not by type. Not by number. By the sound each Pokemon makes.\n\n\"BOLT! Pikachu does NOT go before Charizard!\"\n\nBolt pointed at the cards like he was very sure.\n\n\"PIKA IS NOT HIS LAST NAME!\"\n\nBolt beeped. It was the beep of someone who thinks they are right.\n\n---\n\nOn Thursday, Maceo's mom walked into the living room.\n\nThe family photos on the wall had been moved around. They were now in order from shortest person to tallest person, left to right.\n\n\"MACEO.\"\n\"I DID NOT DO IT.\"\n\"BOLT IS EIGHT INCHES TALL. HOW DID HE REACH THE FRAMES?\"\n\nNo one ever figured that part out.\n\n---\n\nThat weekend, Maceo sat down to talk to Bolt.\n\n\"You're really good at organizing,\" Maceo said.\n\nBolt beeped happily.\n\n\"But you can't just move stuff without asking.\"\n\nBolt looked around the room very slowly. Then he pointed — one long arm, one shorter arm — right at Maceo's bedroom.\n\nMaceo turned around.\n\nHis room was a mess. Legos all over the floor. Clothes everywhere. Four juice boxes on the desk.\n\nHe looked at Bolt. Bolt looked at him.\n\n\"...Fine,\" said Maceo. \"But the Pokemon cards stay in MY order.\"\n\nBolt beeped.\n\nIt 100% meant: we'll see.\n\nTHE END 🤖"},
-adventure:{title:"Island of a Thousand Legos 🏝️",text:"Nobody believed Maceo when he said his Lego pirate ship sailed off the shelf by itself.\n\nHis parents said the cat knocked it off. His brother said it was the wind. But Maceo knew what he saw — the little plastic captain turned his little plastic head, and then the ship glided right off the nightstand and disappeared.\n\nHe found it the next morning in a bowl of cereal.\n\nThe captain looked mad.\n\n---\n\n\"Where are you trying to go?\" Maceo whispered.\n\nThe captain was about two inches tall and made of yellow plastic. He pointed his little arm toward the window.\n\nMaceo looked. Just the backyard. The pool. The tire swing.\n\nBut when he looked really hard, he saw something shimmery just past the tire swing. Like a door that wasn't quite there yet.\n\n\"Okay,\" said Maceo. \"But I'm steering.\"\n\n---\n\nThe island was huge. And the whole thing was made of Legos.\n\nNot like a set from a store — like a REAL island, but every rock and every tree was a tiny plastic brick. The trees were bright blue-green. The mountains were pink-orange. The sand crunched under Maceo's feet — but when he looked close, it was millions of tiny white pieces.\n\nAn orange crab made of Technic pieces walked past his foot.\n\n\"Whoa,\" said Maceo.\n\n---\n\nIn the middle of the island was a giant golden baseplate. 100 studs wide. 100 studs long. And totally empty.\n\nNext to it was a sign that said: BUILD WHATEVER YOU WANT.\n\nSo Maceo sat down and built.\n\nHe made a city. Then a race track through the city. Then a pool next to the track. Then a basketball court because why not. The Lego trees leaned in close to watch.\n\nWhen he finished, the whole island made a sound — like a thousand pieces clicking at once.\n\nAnd it saved everything. His whole build. Right there on the island. Forever.\n\n\"Can I come back?\" Maceo asked.\n\nThe captain beeped: yes.\n\n\"Can I bring my dad?\"\n\nThe longest beep ever: YES.\n\nTHE END 🏝️"},
-basketball:{title:"Animal All-Stars 🏀",text:"The sign-up sheet went up on Monday.\n\nBy Thursday, the animals had taken over the whole basketball league.\n\nIt started with the bear.\n\nHis name was Gerald. He was six feet tall. He could jump really high. And on the sign-up sheet, under \"position,\" he wrote: all of them.\n\nThe ref said bears couldn't play. Gerald dunked over the ref. The ref changed his mind.\n\n---\n\nTEAM GREEN:\n- Gerald the Bear — played every position, sometimes at the same time\n- Diane the Cheetah — could run the whole court in less than one second, but kept forgetting to stop\n- Two capybaras who played as a team because they would not be apart\n- Mr. Buttons the Penguin — very short, could not jump, but was incredibly smart\n\nTEAM BLUE:\n- Kevin the Giraffe\n- A group of meerkats who worked together like a team of robots\n- Derek the Otter — great at basketball, but kept stopping to eat snacks\n- One very confused sheep who thought this was a cooking contest\n\n---\n\nKevin the Giraffe was the problem.\n\nHe was eleven feet tall. He did not need to jump. He just leaned forward a little and dropped the ball through the hoop. Like putting a cup in a cabinet.\n\nBy halftime, the score was 58 to 4.\n\nAll 58 points were Kevin's.\n\nThe 4 points were from the sheep, who scored for both teams by accident while she was looking for flour.\n\n---\n\nMr. Buttons called a timeout.\n\n\"I have a plan,\" he said. \"We give Kevin the ball every single time.\"\n\nEveryone was quiet.\n\n\"Giraffes are bad at most sports,\" Mr. Buttons said. \"Their necks get in the way. They trip a lot. This might be the best day Kevin has ever had.\"\n\nThey all looked at Kevin. He was doing a little happy neck-wiggle every time he scored. He looked SO happy.\n\nGerald nodded slowly. \"We let him have this one.\"\n\n\"Also,\" Mr. Buttons said, \"Derek has been eating snacks for six minutes and nobody told him the game is still going.\"\n\nDerek waved from half court. Kept eating.\n\n---\n\nFinal score: 112 to 38.\n\nKevin did seventeen neck-wiggles.\n\nThe sheep won a pie contest in a different building by mistake.\n\nMr. Buttons was already making a plan for Wednesday.\n\nTHE END 🏀"},
-space:{title:"The Kid Who Swam in Space 🚀",text:"Here's something nobody tells you about Saturn: it smells like a swimming pool.\n\nMaceo found this out when a NASA portal appeared behind his closet — it was NOT there yesterday — and sent him 746 million miles away from home.\n\nHe was wearing his swim trunks and goggles.\n\nStars everywhere. Saturn right in front of him. Huge and ringed and totally real.\n\n\"Huh,\" said Maceo.\n\n---\n\nSaturn is made of gas. This means if you jump into it, you don't hit anything hard. You just sink slowly through clouds that get thicker as you go down.\n\nIt's like swimming through the world's biggest Slurpee.\n\n\"THIS IS SO COOL!\" Maceo yelled.\n\nSomething giant drifted past him in the yellow clouds. Big and slow and round. It was a storm the size of the whole Earth, floating by like a sleepy whale. It blinked at him.\n\n(Saturn's storms blink sometimes. Scientists don't really talk about it.)\n\n\"Cool,\" said Maceo. And he swam around it.\n\n---\n\nSaturn's rings looked like a giant ball pit from far away. Up close, they were billions of chunks of ice — some the size of a marble, some the size of a house — all spinning around slowly.\n\nMaceo swam through them. He did a cannonball off a piece of ice the size of his refrigerator.\n\nThe splash went in every direction because there's no rule in space about which way splashes go.\n\nBest day ever.\n\n---\n\nOne of Saturn's moons floated by. It was small and round and looked EXACTLY like the Death Star from Star Wars.\n\nMaceo knocked on it.\n\nSomething knocked back.\n\nHe swam the other way.\n\n---\n\nThe portal home glowed softly at the edge of the rings.\n\nMaceo floated and looked at Saturn one more time. 83 moons. Billions of pieces of ice. Storms bigger than our whole planet. And it's all just out there, whether anyone is watching or not.\n\n\"I'll be back,\" he said. The storm blinked.\n\nMaceo swam home. Back in his closet in three seconds. Swim trunks still wet.\n\nHe smelled like a swimming pool for the rest of the day. His dad thought it was from their pool.\n\nIt wasn't.\n\nTHE END 🚀"},
-pool:{title:"The Pool That Went Sideways 🏊",text:"The dolphin showed up on a Tuesday.\n\nMaceo was swimming laps — backstroke, because it was his best one — when something gray and fast shot past him underwater and made a big wave.\n\nHe stopped. Looked around. Nothing there.\n\nHe kept swimming.\n\nThe dolphin zoomed past again. But this time it slowed down just enough to look at him. The look said: is that really your fastest?\n\n\"Excuse me,\" said Maceo.\n\nThe dolphin made a clicking sound. This meant: race me.\n\n---\n\nThe rules:\n- Four laps, freestyle\n- The dolphin had to stay in the pool the whole time (no jumping out and landing ahead — it had clearly thought about this)\n- Winner gets bragging rights\n\n\"Fine,\" said Maceo.\n\n---\n\nLap 1: The dolphin won by a lot. It wasn't even trying hard. Dolphins swim about 25 miles per hour. Maceo does not.\n\nLap 2: Maceo tried the butterfly stroke. The dolphin had never seen anything move like that before. It slowed way down to watch.\n\nMaceo gained three whole seconds.\n\nLap 3: The dolphin figured out what happened. It made a sound that was definitely laughing. Then it sped back up.\n\nLap 4: Maceo swam as hard as he ever had. Arms, legs, everything. He could hear the dolphin getting closer behind him. And then — for exactly two seconds — he was winning.\n\nThe dolphin passed him right at the wall.\n\n---\n\nThe dolphin popped up next to Maceo and clicked three times. Bragging. Totally bragging.\n\nThen it slipped back under the water and was gone.\n\nMaceo floated on his back.\n\n\"I was winning for two seconds,\" he said.\n\nThe pool made a small wave.\n\nHe decided that meant: impressed.\n\nTHE END 🏊"},
-art:{title:"The Drawing That Walked Off 🎨",text:"Maceo drew the dragon on a Tuesday because he was bored.\n\nIt took 45 minutes. Green scales. Blue wings. One tail that came out a little crooked because he sneezed.\n\nHe was pretty proud of it.\n\nHe went to get a snack. When he came back, the paper was empty.\n\nThe dragon was gone.\n\nThere were tiny claw marks on the edge of the paper.\n\n---\n\nMaceo found it in the living room.\n\nNot the drawing — the real dragon. About the size of a big cat. Green. Blue wings. Crooked tail. Sitting on the coffee table, pushing buttons on the TV remote.\n\nThe channel changed. The dragon made a surprised little sound.\n\n\"Hey,\" said Maceo.\n\nThe dragon looked up. It knew who he was right away — the way a drawing always knows the hand that made it. It made a happy squeaky sound.\n\n\"You're not supposed to be real,\" Maceo said.\n\nThe dragon looked at its claws. Then at Maceo. Then at its claws again.\n\nThis seemed to be news to it too.\n\n---\n\nThe dragon was curious about everything.\n\nIt spent 20 minutes bouncing a basketball. It licked the fridge and made a face (too cold). It watched birds out the window like it was studying for a test.\n\nIt tried to fly across the living room. The crooked tail made it spin sideways. It crashed behind the couch.\n\nA long pause.\n\nThen it climbed back out, shook itself off, and tried again.\n\n\"I should have drawn the tail straighter,\" Maceo said.\n\nThe dragon gave him a look.\n\n\"Sorry.\"\n\nAnother look. This one said: a little late for that.\n\n---\n\nAt dinner, Dad came downstairs and found a small green dragon eating the leftover noodles.\n\nA long pause.\n\n\"Maceo.\"\n\"I drew it.\"\n\"It walked off the page.\"\n\nDad looked at the dragon. The dragon looked at Dad. Then went back to the noodles.\n\n\"Does it breathe fire?\" Dad asked.\n\nThe dragon perked up. Opened its mouth. A small flame came out. Then a bigger one. Then it set the noodles on fire, panicked, and knocked them off the table.\n\n\"Outside only with that,\" Dad said.\n\n---\n\nThat evening, Maceo drew more things.\n\nA ball — it bounced on the patio. A small pond — it appeared in a bowl and the dragon drank from it. A friend for the dragon, smaller and purple.\n\nWhen the purple dragon walked off the page, the green dragon squeaked with joy.\n\nThey flew around the backyard until it got dark. Both of them spinning sideways because of their crooked tails. Neither of them cared.\n\nMaceo watched from the steps.\n\n\"I should draw more things,\" he said.\n\nHe went inside and got his markers.\n\nTHE END 🎨"},
-pickleball:{title:"The Pickleball Robot Tournament 🏓",text:"The robots signed up fair and square.\n\nMaceo was right there when it happened — standing at the sign-up table for the Hamilton Youth Pickleball Tournament — when three robots rolled up and pressed a metal finger to the sheet one at a time.\n\nThe lady at the table looked at them.\n\n\"Do you live in Hamilton?\" she asked.\n\nThe first robot pulled out a piece of paper. It looked like an electric bill.\n\n\"Okay,\" said the lady.\n\n---\n\nThe robot team was:\n- UNIT-7: tall, very fast, but couldn't bend its wrist\n- CLANK: short, aggressive, kept spinning in circles for no reason\n- BOB: nobody knew why it was called Bob, but it had written BOB on its name tag and that seemed important to it\n\nThey had one big problem: the robots learned pickleball from one YouTube video. The video said to always hit the ball as hard as possible.\n\nThis worked about half the time.\n\nThe other half, the ball went into the parking lot.\n\n---\n\nMaceo's first match was against BOB.\n\nBOB served. The ball flew like a car on the highway. It hit the back fence, bounced back, and landed in bounds.\n\n\"Out,\" said Maceo.\n\nBOB made a noise like a broken printer. That meant: I disagree.\n\n\"It hit the fence.\"\n\nBOB thought for four seconds. Then it accepted this. And updated something inside itself.\n\nThe next serve was a little softer.\n\nMaceo won 11-4. After every point, BOB beeped and updated its plan. By point 11, BOB was actually pretty good.\n\nToo late. But Maceo respected it.\n\n---\n\nThe big final was Maceo vs. UNIT-7.\n\nUNIT-7 was really good. It had watched every match and figured out exactly where to hit the ball — always to the spot where Maceo wasn't standing.\n\nScore: 10 to 10.\n\nMaceo looked at UNIT-7. UNIT-7's blue light eyes looked back.\n\nMaceo pretended to go left. Then went right.\n\nUNIT-7 predicted the fake and also went right.\n\nThe ball dropped perfectly into the kitchen zone. UNIT-7 couldn't reach it.\n\n11-10. Maceo wins.\n\nUNIT-7 stood still for a moment. Then made a sound that was either a system error or applause.\n\nMaceo decided it was applause.\n\n---\n\nThe robots held their second-place ribbons very seriously. CLANK kept spinning. BOB held its ribbon up like it was taking a photo of itself inside its own head.\n\nOn the way home, Dad asked: \"How do you think they got there?\"\n\nMaceo thought about it. \"I think they walked.\"\n\n\"From where?\"\n\n\"I don't know. But BOB had an electric bill.\"\n\nDad nodded. \"Fair enough.\"\n\nTHE END 🏓"},
-statue:{title:"The Night the Statue of Liberty Moved 🗽",text:"Maceo finished the build at 11:47 at night on a Friday.\n\nSix weekends. 1,685 pieces. The box said ages 16 and up. Maceo was nine. He didn't mention this to the box.\n\nThe Statue of Liberty stood on his dresser. Green and gray. Torch up. Crown perfect. Every tiny window in the base exactly right.\n\nHe looked at it for a long time.\n\n\"Good job,\" he told it.\n\nHe turned off the light and went to sleep.\n\n---\n\nAt 2 in the morning, the Statue of Liberty stepped off the dresser.\n\nNot fell — STEPPED. Carefully. The way you step off a curb.\n\nShe was about 14 inches tall. She had to move slowly because she was made of 1,685 pieces of plastic and didn't want anything to pop off.\n\nShe walked to the window and looked out at the backyard — the pool, the tire swing, the dark grass.\n\nShe had been looking at the ocean for 140 years. A backyard in New Jersey was, she decided, pretty nice.\n\n---\n\nShe looked around the whole room.\n\nThe Lego bin she understood right away. Her people. She touched a few pieces gently.\n\nThe basketball was confusing. She tried to pick it up with her torch arm. It rolled away. She watched it go, very calm.\n\nThen she found Maceo's markers.\n\nShe picked up the green one — her color — and drew something small in the corner of his sketchpad.\n\nA tiny torch. Perfect lines. Really good.\n\n---\n\nAt 5 in the morning, she walked back to the dresser.\n\nStepped up. Got back into her spot. Torch up. Crown on. Every window exactly right.\n\n---\n\nMaceo woke up and looked at the Statue first thing.\n\nShe was exactly where he left her.\n\nBut there was a tiny green torch drawn in the corner of his sketchpad.\n\nHe didn't remember drawing it.\n\nHe looked at her for a long time.\n\n\"Did you do this?\"\n\nThe Statue of Liberty stood perfectly still.\n\nMaceo looked at the drawing again. It was really, really good. Better than anything he usually drew.\n\n\"Thanks,\" he said.\n\nHe taped it to the wall right next to the dresser. Right at her eye level.\n\nHe never saw her move.\n\nBut every few weeks, there was a new tiny drawing in the corner of his sketchpad.\n\nHe always left the green marker out.\n\nTHE END 🗽"}
+bolt:{title:"The Lego Robot Gone Wild 🤖",text:"Maceo had been building all day long.\n\nSnack wrappers were everywhere. Three instruction books were open on the floor. One piece was bent a little because he pushed it in the wrong way — but he was NOT going back to fix it.\n\nThen — CLICK. The last piece snapped in.\n\nThe robot was eight inches tall. Green and blue. One arm was a little longer than the other because Maceo ran out of the right pieces. He named it Bolt.\n\n\"Cool,\" said Maceo. He went to get a snack.\n\nThat's when Bolt's eyes lit up.\n\n---\n\nWhen Maceo came back, Bolt had sorted every single Lego piece by color. All of them. In eleven minutes.\n\n\"Whoa,\" said Maceo. Bolt beeped. It was a happy beep.\n\n\"Okay, but don't touch anything else.\"\n\nBolt beeped again. This beep sounded like: sure, no problem, I won't touch a thing.\n\nBolt was lying.\n\n---\n\nThe next morning, Maceo went downstairs. Every cup was sorted by size. The spoons had been moved to their own drawer. On the drawer — made out of tiny Lego flag pieces — was a label: SOUP TOOLS.\n\nDad stared at it.\n\n\"Did you do this?\"\n\"Bolt did it.\"\n\"The Lego robot.\"\n\"He really likes to organize.\"\n\nDad opened the SOUP TOOLS drawer. Looked at the spoons. Closed it. \"Okay,\" he said quietly.\n\n---\n\nBy Wednesday, Bolt had sorted all of Maceo's Pokemon cards by the sound each Pokemon makes.\n\n\"BOLT! Pikachu does NOT go before Charizard!\"\n\nBolt pointed at the cards. Very sure of himself.\n\n\"PIKA IS NOT HIS LAST NAME!\"\n\nBolt beeped. The beep of someone who thinks they are right.\n\n---\n\nOn Thursday, Maceo's mom walked in. The family photos on the wall had been rearranged — shortest person to tallest, left to right.\n\n\"MACEO.\"\n\"I DID NOT DO IT.\"\n\"BOLT IS EIGHT INCHES TALL. HOW DID HE REACH THE FRAMES?\"\n\nNo one ever figured that part out.\n\n---\n\nThat weekend, Maceo sat down to talk to Bolt. Bolt looked around slowly. Then pointed right at Maceo's bedroom.\n\nMaceo turned around. His room was a total mess.\n\nHe looked at Bolt. Bolt looked at him.\n\n\"...Fine. But the Pokemon cards stay in MY order.\"\n\nBolt beeped. It 100% meant: we'll see.\n\nTHE END 🤖"},
+adventure:{title:"Island of a Thousand Legos 🏝️",text:"Nobody believed Maceo when he said his Lego pirate ship sailed off the shelf by itself.\n\nHis parents said the cat did it. His brother said it was the wind. But Maceo knew — the tiny plastic captain turned his tiny head, and the ship glided right off the nightstand.\n\nHe found it the next morning in a bowl of cereal. The captain looked mad.\n\n---\n\n\"Where are you trying to go?\" Maceo whispered.\n\nThe captain pointed toward the window. Maceo looked — just the backyard, the pool, the tire swing. But when he looked really hard, he saw something shimmery past the tire swing. Like a door that wasn't quite there.\n\n\"Okay,\" said Maceo. \"But I'm steering.\"\n\n---\n\nThe island was huge. And the whole thing was made of Legos.\n\nEvery rock and tree was a tiny plastic brick. The trees were bright blue-green. The mountains were pink-orange. The sand crunched — but up close it was millions of tiny white pieces.\n\nAn orange crab made of Technic pieces walked past his foot. \"Whoa,\" said Maceo.\n\n---\n\nIn the middle was a giant golden baseplate. 100 studs wide. Totally empty.\n\nA sign said: BUILD WHATEVER YOU WANT.\n\nMaceo built a city. Then a race track. Then a pool. Then a basketball court because why not. The Lego trees leaned in to watch.\n\nWhen he finished, the island made a sound like a thousand pieces clicking at once. And saved everything. Forever.\n\n\"Can I come back?\" The captain beeped: yes.\n\"Can I bring my dad?\" The longest beep ever: YES.\n\nTHE END 🏝️"},
+basketball:{title:"Animal All-Stars 🏀",text:"The sign-up sheet went up on Monday. By Thursday, the animals had taken over the basketball league.\n\nIt started with the bear. His name was Gerald. Six feet tall. Could jump really high. Under \"position\" he wrote: all of them.\n\nThe ref said bears couldn't play. Gerald dunked over the ref. The ref changed his mind.\n\n---\n\nTEAM GREEN:\n- Gerald the Bear — played every position at once\n- Diane the Cheetah — ran the court in one second, kept forgetting to stop\n- Two capybaras who played together because they refused to be apart\n- Mr. Buttons the Penguin — tiny, couldn't jump, but super smart\n\nTEAM BLUE:\n- Kevin the Giraffe\n- A group of meerkats who worked like a robot team\n- Derek the Otter — great player, kept stopping to eat snacks\n- One very confused sheep who thought this was a cooking contest\n\n---\n\nKevin the Giraffe was eleven feet tall. He didn't jump. He just leaned forward and dropped the ball through the hoop. Like putting a cup in a cabinet.\n\nHalftime score: 58 to 4. All 58 for Kevin. The 4 were from the sheep, who scored for both teams by mistake while looking for flour.\n\n---\n\nMr. Buttons called timeout. \"We give Kevin the ball every time.\"\n\n\"Giraffes are bad at every sport,\" he said. \"This might be the best day Kevin has ever had.\"\n\nThey looked at Kevin. He was doing a happy neck-wiggle after every basket. He looked SO happy.\n\nGerald nodded. \"We let him have this one.\"\n\n\"Also,\" Mr. Buttons added, \"Derek has been eating for six minutes and nobody told him the game is still going.\"\n\nDerek waved from half court. Kept eating.\n\n---\n\nFinal: 112 to 38. Kevin did seventeen neck-wiggles. The sheep won a pie contest in the wrong building. Mr. Buttons was already planning Wednesday.\n\nTHE END 🏀"},
+space:{title:"The Kid Who Swam in Space 🚀",text:"Here's something nobody tells you about Saturn: it smells like a swimming pool.\n\nMaceo found this out when a NASA portal appeared behind his closet — it was NOT there yesterday — and sent him 746 million miles from home. He was wearing his swim trunks and goggles.\n\nStars everywhere. Saturn right in front of him. Huge and totally real.\n\n\"Huh,\" said Maceo.\n\n---\n\nSaturn is made of gas. So if you jump in, you don't hit anything hard. You just sink slowly through clouds that get thicker as you go. Like swimming through the world's biggest Slurpee.\n\n\"THIS IS SO COOL!\" Maceo yelled.\n\nSomething giant drifted past — a storm the size of the whole Earth, floating by like a sleepy whale. It blinked at him. (Saturn's storms blink sometimes. Scientists don't talk about it much.)\n\n\"Cool,\" said Maceo. And he swam around it.\n\n---\n\nSaturn's rings were like a giant ball pit — billions of chunks of ice, some the size of a marble, some the size of a house.\n\nMaceo did a cannonball off a piece of ice the size of his refrigerator. The splash went in every direction because there's no rule in space about which way splashes go.\n\nBest day ever.\n\n---\n\nOne of Saturn's moons floated by. Small and round. It looked EXACTLY like the Death Star.\n\nMaceo knocked on it. Something knocked back. He swam the other way.\n\n---\n\nThe portal home glowed at the edge of the rings. Maceo floated and looked one more time — 83 moons, billions of ice chunks, storms bigger than our planet. All just sitting out there.\n\n\"I'll be back,\" he said. The storm blinked.\n\nBack in his closet in three seconds. Swim trunks wet. Smelled like a pool all day. His dad thought it was from their pool.\n\nIt wasn't.\n\nTHE END 🚀"},
+pool:{title:"The Pool That Went Sideways 🏊",text:"The dolphin showed up on a Tuesday.\n\nMaceo was doing laps — backstroke, his best stroke — when something gray and fast shot past him and made a big wave. He stopped. Nothing there. He kept swimming.\n\nThe dolphin zoomed past again. This time it slowed down just enough to look at him. The look said: is that really your fastest?\n\n\"Excuse me,\" said Maceo.\n\nThe dolphin clicked. That meant: race me.\n\n---\n\nThe rules:\n- Four laps, freestyle\n- Dolphin stays in the pool the whole time (no jumping out and landing ahead — it had clearly thought about this)\n- Winner gets bragging rights\n\n\"Fine,\" said Maceo.\n\n---\n\nLap 1: Dolphin won by a lot. Not even trying. Dolphins swim 25 miles per hour. Maceo does not.\n\nLap 2: Maceo tried butterfly stroke. The dolphin had never seen anything move like that. It slowed way down to watch. Maceo gained three seconds.\n\nLap 3: The dolphin figured it out. Made a sound that was definitely laughing. Sped back up.\n\nLap 4: Maceo went as hard as he ever had. He could hear the dolphin getting closer. And then — for exactly two seconds — he was winning.\n\nThe dolphin passed him at the wall.\n\n---\n\nThe dolphin clicked three times. Bragging. Totally bragging. Then it slipped away.\n\nMaceo floated on his back. \"I was winning for two seconds,\" he said.\n\nThe pool made a small wave. He decided that meant: impressed.\n\nTHE END 🏊"},
+art:{title:"The Drawing That Walked Off 🎨",text:"Maceo drew the dragon on a Tuesday because he was bored. It took 45 minutes. Green scales. Blue wings. One tail a little crooked because he sneezed.\n\nHe went to get a snack. When he came back, the paper was empty. The dragon was gone. There were tiny claw marks on the edge of the page.\n\n---\n\nHe found it in the living room. Not the drawing — the REAL dragon. Size of a big cat. Green. Crooked tail. Sitting on the coffee table pressing buttons on the TV remote.\n\nThe channel changed. The dragon made a surprised sound.\n\n\"Hey,\" said Maceo. The dragon looked up. It knew who he was — the way a drawing always knows the hand that made it. Happy squeaky sound.\n\n\"You're not supposed to be real,\" Maceo said.\n\nThe dragon looked at its claws. Then at Maceo. Then at its claws again. This seemed to be news to it too.\n\n---\n\nThe dragon was curious about everything. Spent 20 minutes bouncing a basketball. Licked the fridge and made a face (too cold). Tried to fly across the living room — the crooked tail made it spin sideways. Crashed behind the couch.\n\nLong pause. Climbed out. Shook itself off. Tried again.\n\n\"I should have drawn the tail straighter,\" Maceo said. The dragon gave him a look. \"Sorry.\" Another look: a little late for that.\n\n---\n\nAt dinner, Dad came down and found a small green dragon eating the leftover noodles.\n\n\"Maceo.\" \"I drew it.\" \"It walked off the page.\"\n\nDad looked at the dragon. Dragon looked at Dad. Went back to the noodles.\n\n\"Does it breathe fire?\" Dad asked. The dragon opened its mouth. Small flame. Then bigger. Then it set the noodles on fire, panicked, knocked them off the table.\n\n\"Outside only,\" Dad said.\n\n---\n\nThat evening Maceo drew more things — a ball (bounced on the patio), a pond (appeared in a bowl), a purple friend for the dragon.\n\nWhen the purple dragon walked off the page, the green one squeaked with joy. They flew around the backyard until dark, both spinning sideways because of their tails. Neither of them cared.\n\n\"I should draw more things,\" Maceo said. He went and got his markers.\n\nTHE END 🎨"},
+pickleball:{title:"The Pickleball Robot Tournament 🏓",text:"The robots signed up fair and square.\n\nMaceo was at the sign-up table for the Hamilton Youth Pickleball Tournament when three robots rolled up and pressed a metal finger to the sheet.\n\nThe lady looked at them. \"Do you live in Hamilton?\"\n\nThe first robot pulled out a piece of paper. It looked like an electric bill. \"Okay,\" said the lady.\n\n---\n\nRobot team:\n- UNIT-7: tall, fast, couldn't bend its wrist\n- CLANK: short, aggressive, kept spinning in circles for no reason\n- BOB: nobody knew why it was called Bob, but it wrote BOB on its name tag and that seemed very important\n\nTheir problem: they learned pickleball from one YouTube video that said to always hit as hard as possible. This worked half the time. The other half, the ball went into the parking lot.\n\n---\n\nMaceo's first match: vs BOB.\n\nBOB served. Ball flew like a car on the highway. Hit the back fence, bounced back, landed in bounds.\n\n\"Out,\" said Maceo. BOB made a noise like a broken printer. \"It hit the fence.\" BOB thought for four seconds. Accepted it. Updated itself. Next serve was softer.\n\nMaceo won 11-4. BOB updated its plan after every point. By point 11, BOB was actually pretty good. Too late. But Maceo respected it.\n\n---\n\nThe final: Maceo vs UNIT-7. UNIT-7 had watched every match and always hit to where Maceo wasn't standing. Score: 10 to 10.\n\nMaceo faked left. Went right. UNIT-7 predicted the fake and also went right. The ball dropped perfectly into the kitchen zone. UNIT-7 couldn't reach it.\n\n11-10. Maceo wins.\n\nUNIT-7 stood still. Then made a sound — either a system error or applause. Maceo decided it was applause.\n\n---\n\nThe robots held their second-place ribbons very seriously. CLANK kept spinning. BOB held his ribbon up like he was photographing it inside his own head.\n\nOn the way home: \"How do you think they got there?\" Dad asked.\n\n\"I think they walked.\" \"From where?\" \"I don't know. But BOB had an electric bill.\"\n\nDad nodded. \"Fair enough.\"\n\nTHE END 🏓"},
+statue:{title:"The Night the Statue of Liberty Moved 🗽",text:"Maceo finished the build at 11:47 at night on a Friday. Six weekends. 1,685 pieces. The box said ages 16 and up. Maceo was nine. He didn't mention this to the box.\n\nThe Statue of Liberty stood on his dresser. Green and gray. Torch up. Crown perfect.\n\nHe looked at it for a long time. \"Good job,\" he told it. Then he went to sleep.\n\n---\n\nAt 2 in the morning, the Statue of Liberty stepped off the dresser.\n\nNot fell — STEPPED. Carefully. Like stepping off a curb. She was 14 inches tall and had to move slowly so nothing would pop off.\n\nShe walked to the window and looked at the backyard — the pool, the tire swing, the dark grass. She had been looking at the ocean for 140 years. A backyard in New Jersey was, she decided, pretty nice.\n\n---\n\nShe looked around the room. The Lego bin she understood right away — her people. She touched a few pieces gently.\n\nThe basketball confused her. She tried to pick it up with her torch arm. It rolled away. She watched it go, very calm.\n\nThen she found Maceo's markers. She picked up the green one — her color — and drew something small in the corner of his sketchpad.\n\nA tiny torch. Perfect lines. Really good.\n\n---\n\nAt 5 in the morning she walked back. Stepped up. Torch up. Crown on. Every window exactly right.\n\n---\n\nMaceo woke up and checked the Statue first. She was exactly where he left her.\n\nBut there was a tiny green torch drawn in the corner of his sketchpad. He didn't remember drawing it.\n\n\"Did you do this?\" The Statue stood perfectly still.\n\nThe drawing was really, really good. Better than anything he usually drew.\n\n\"Thanks,\" he said. He taped it to the wall right at her eye level.\n\nHe never saw her move. But every few weeks there was a new tiny drawing in the corner of his sketchpad.\n\nHe always left the green marker out.\n\nTHE END 🗽"}
 };
 
+// Tab switching
 function showTab(name,el){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
@@ -201,47 +268,113 @@ function showTab(name,el){
   el.classList.add('active');
 }
 
+// Modal
 function setModal(title,content){
   document.getElementById('modal-title').textContent=title;
   document.getElementById('modal-content').innerHTML=content;
   document.getElementById('modal').classList.add('open');
 }
-
-function openYT(name,channelId){
-  var src='https://www.youtube-nocookie.com/embed?listType=user_uploads&list='+channelId+'&rel=0&modestbranding=1';
-  setModal(name,'<div class="yt-wrap"><iframe src="'+src+'" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture"></iframe></div>');
-}
-
-function openGame(name,url){
-  setModal(name,'<div class="game-wrap"><iframe src="'+url+'" allowfullscreen allow="gamepad *"></iframe></div>');
-}
-
-function openLink(name,emoji,desc,url,btnText,btnClass){
-  setModal(name,'<div class="link-modal-body"><div class="link-modal-emoji">'+emoji+'</div><div class="link-modal-desc">'+desc+'</div><a class="link-modal-btn '+btnClass+'" href="'+url+'" target="_blank">'+btnText+'</a></div>');
-}
-
 function closeModal(){
   document.getElementById('modal').classList.remove('open');
   document.getElementById('modal-content').innerHTML='';
 }
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
 
+// Link panel
+function openLink(name,emoji,desc,url,btn,cls){
+  setModal(name,'<div class="link-modal-body"><div class="link-modal-emoji">'+emoji+'</div><div class="link-modal-desc">'+desc+'</div><a class="link-modal-btn '+(cls||'')+'" href="'+url+'" target="_blank">'+btn+'</a></div>');
+}
+
+// Game embed
+function openGame(name,emoji,desc,url){
+  setModal(name,'<div style="padding:12px 16px;background:#f0f7e8;font-size:13px;color:#3B6D11;font-weight:600">'+emoji+' '+desc+'</div><div class="game-wrap"><iframe src="'+url+'" allowfullscreen allow="gamepad *; autoplay"></iframe></div>');
+}
+
+// Stories
 function readStory(key){
   var s=stories[key];
   document.getElementById('story-title').textContent=s.title;
   document.getElementById('story-text').textContent=s.text;
-  document.getElementById('story-list').style.display='none';
+  document.getElementById('story-list-wrap').style.display='none';
   document.getElementById('story-view').style.display='block';
   window.scrollTo(0,0);
 }
-
 function backToStories(){
-  document.getElementById('story-list').style.display='flex';
+  document.getElementById('story-list-wrap').style.display='block';
   document.getElementById('story-view').style.display='none';
 }
+function filterStories(tag,el){
+  document.querySelectorAll('.story-filter').forEach(f=>f.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.story-card').forEach(function(c){
+    if(tag==='all'||c.dataset.tags.indexOf(tag)>-1) c.classList.remove('hidden');
+    else c.classList.add('hidden');
+  });
+}
+function surpriseStory(){
+  var cards=Array.from(document.querySelectorAll('.story-card:not(.hidden)'));
+  if(!cards.length) return;
+  var pick=cards[Math.floor(Math.random()*cards.length)];
+  pick.click();
+}
 
-document.getElementById('modal').addEventListener('click',function(e){
-  if(e.target===this) closeModal();
-});
+// Search
+function doSearch(){
+  var q=document.getElementById('search-input').value.trim();
+  if(!q) return;
+  window.open('https://www.google.com/search?q='+encodeURIComponent(q)+'&safe=active','_blank');
+}
+function quickSearch(q){
+  document.getElementById('search-input').value=q;
+  doSearch();
+}
+
+// Drawing Studio
+function openDraw(){
+  var html='<div class="draw-wrap">'+
+    '<div class="draw-toolbar">'+
+      '<label>Color:</label>'+
+      ['#222222','#e53935','#1E88E5','#43A047','#FB8C00','#8E24AA','#F06292','#FFFFFF'].map(function(c,i){
+        return '<div class="color-btn'+(i===0?' active':'')+'" style="background:'+c+';'+(c==='#FFFFFF'?'border:2px solid #ccc':'')+'" onclick="setColor(\''+c+'\',this)"></div>';
+      }).join('')+
+      '<label style="margin-left:8px">Size:</label>'+
+      '<button class="size-btn active" onclick="setSize(4,this)">S</button>'+
+      '<button class="size-btn" onclick="setSize(10,this)">M</button>'+
+      '<button class="size-btn" onclick="setSize(20,this)">L</button>'+
+      '<button class="size-btn" onclick="setSize(40,this)">XL</button>'+
+      '<button class="draw-action" onclick="toggleEraser(this)">Eraser</button>'+
+      '<button class="draw-action red" onclick="clearCanvas()">Clear</button>'+
+      '<button class="draw-action" onclick="saveDrawing()">Save</button>'+
+    '</div>'+
+    '<canvas id="drawCanvas"></canvas>'+
+  '</div>';
+  setModal('Maceo\'s Drawing Studio 🎨', html);
+  // Setup after DOM insert
+  requestAnimationFrame(function(){
+    var canvas=document.getElementById('drawCanvas');
+    var box=canvas.parentElement;
+    canvas.width=box.offsetWidth||640;
+    canvas.height=400;
+    canvas.style.background='#fff';
+    var ctx=canvas.getContext('2d');
+    var drawing=false, color='#222222', size=4, erasing=false;
+    function getPos(e){
+      var r=canvas.getBoundingClientRect();
+      var src=e.touches?e.touches[0]:e;
+      return{x:(src.clientX-r.left)*(canvas.width/r.width),y:(src.clientY-r.top)*(canvas.height/r.height)};
+    }
+    function start(e){e.preventDefault();drawing=true;var p=getPos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);}
+    function move(e){e.preventDefault();if(!drawing)return;var p=getPos(e);ctx.lineTo(p.x,p.y);ctx.strokeStyle=erasing?'#ffffff':color;ctx.lineWidth=size;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();}
+    function stop(e){drawing=false;}
+    canvas.addEventListener('mousedown',start);canvas.addEventListener('mousemove',move);canvas.addEventListener('mouseup',stop);canvas.addEventListener('mouseleave',stop);
+    canvas.addEventListener('touchstart',start,{passive:false});canvas.addEventListener('touchmove',move,{passive:false});canvas.addEventListener('touchend',stop);
+    window.setColor=function(c,el){color=c;erasing=false;document.querySelectorAll('.color-btn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');};
+    window.setSize=function(s,el){size=s;document.querySelectorAll('.size-btn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');};
+    window.toggleEraser=function(el){erasing=!erasing;el.style.background=erasing?'#3B6D11':'';el.style.color=erasing?'#fff':'';};
+    window.clearCanvas=function(){ctx.clearRect(0,0,canvas.width,canvas.height);};
+    window.saveDrawing=function(){var a=document.createElement('a');a.download='maceo-drawing.png';a.href=canvas.toDataURL();a.click();};
+  });
+}
 </script>
 </body>
 </html>
