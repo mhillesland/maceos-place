@@ -8,42 +8,42 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-height:100vh;padding:1rem}
 .hero{background:linear-gradient(135deg,#3B6D11,#185FA5);border-radius:16px;padding:2rem 1.5rem 1.5rem;text-align:center;margin-bottom:1.5rem}
-.hero h1{font-size:32px;font-weight:700;color:#fff;margin-bottom:0.25rem}
-.hero p{font-size:15px;color:rgba(255,255,255,0.85)}
+.hero h1{font-size:32px;font-weight:700;color:#fff;margin-bottom:.25rem}
+.hero p{font-size:15px;color:rgba(255,255,255,.85)}
 .tabs{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
 .tab{padding:8px 18px;border-radius:20px;border:2px solid #3B6D11;background:#fff;color:#3B6D11;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
 .tab.active{background:#3B6D11;color:#fff}
 .tab:hover:not(.active){background:#EAF3DE}
-.section{display:none}
-.section.active{display:block}
+.section{display:none}.section.active{display:block}
 
-/* Cards */
-.vid-grid,.game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.vid-card,.game-card{background:#fff;border:2px solid #e0ecd0;border-radius:12px;overflow:hidden;cursor:pointer}
+/* Video grid */
+.vid-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.vid-card{background:#fff;border:2px solid #e0ecd0;border-radius:12px;overflow:hidden;cursor:pointer}
 .vid-card:hover{border-color:#3B6D11}
-.game-card{padding:1.25rem 1rem;text-align:center}
-.game-card:hover{border-color:#185FA5}
 .vid-thumb{height:90px;display:flex;align-items:center;justify-content:center;font-size:36px}
 .vid-info{padding:10px 12px}
 .vid-info p{font-size:13px;font-weight:600;color:#222;margin-bottom:2px}
 .vid-info span{font-size:12px;color:#666}
+
+/* Game grid */
+.game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.game-card{background:#fff;border:2px solid #e0ecd0;border-radius:12px;padding:1.25rem 1rem;text-align:center;cursor:pointer}
+.game-card:hover{border-color:#185FA5}
 .game-icon{font-size:38px;margin-bottom:8px}
 .game-card p{font-size:14px;font-weight:600;color:#222;margin-bottom:3px}
 .game-card span{font-size:12px;color:#666}
-.special-card{background:linear-gradient(135deg,#EAF3DE,#E6F1FB);border:2px solid #3B6D11}
-.special-card:hover{border-color:#185FA5}
+.game-special{background:linear-gradient(135deg,#EAF3DE,#E6F1FB);border-color:#3B6D11}
 
 /* Stories */
 .story-toolbar{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap;align-items:center}
-.story-filter{padding:6px 14px;border-radius:16px;border:2px solid #e0ecd0;background:#fff;color:#555;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
-.story-filter.active{background:#185FA5;border-color:#185FA5;color:#fff}
+.sf{padding:6px 14px;border-radius:16px;border:2px solid #e0ecd0;background:#fff;color:#555;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.sf.active{background:#185FA5;border-color:#185FA5;color:#fff}
 .surprise-btn{padding:8px 18px;border-radius:20px;border:2px solid #3B6D11;background:#3B6D11;color:#fff;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;margin-left:auto}
-.surprise-btn:hover{background:#27500A}
 .story-list{display:flex;flex-direction:column;gap:10px}
 .story-card{background:#fff;border:2px solid #e0ecd0;border-radius:12px;padding:1rem 1.25rem;cursor:pointer;display:flex;align-items:center;gap:14px}
 .story-card:hover{border-color:#185FA5}
 .story-card.hidden{display:none}
-.story-icon{font-size:28px;flex-shrink:0}
+.si{font-size:28px;flex-shrink:0}
 .story-card h3{font-size:15px;font-weight:600;color:#222;margin-bottom:2px}
 .story-card p{font-size:13px;color:#555}
 .story-view{display:none;background:#fff;border-radius:12px;padding:1.5rem;border:2px solid #e0ecd0}
@@ -52,18 +52,19 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 .story-text{font-size:15px;line-height:1.9;color:#333;white-space:pre-wrap}
 
 /* Search */
-.search-box-wrap{background:#fff;border-radius:16px;padding:1.5rem;border:2px solid #e0ecd0;margin-bottom:1rem}
-.search-box-wrap h2{font-size:18px;font-weight:700;color:#222;margin-bottom:.5rem}
-.search-box-wrap p{font-size:14px;color:#666;margin-bottom:1rem}
+.search-wrap{background:#fff;border-radius:16px;padding:1.5rem;border:2px solid #e0ecd0;margin-bottom:1rem}
+.search-wrap h2{font-size:18px;font-weight:700;color:#222;margin-bottom:.4rem}
+.search-wrap>p{font-size:14px;color:#666;margin-bottom:1rem}
 .search-row{display:flex;gap:8px}
 .search-input{flex:1;padding:10px 14px;border-radius:20px;border:2px solid #e0ecd0;font-size:15px;font-family:inherit;outline:none}
 .search-input:focus{border-color:#3B6D11}
 .search-btn{padding:10px 20px;border-radius:20px;background:#3B6D11;color:#fff;font-weight:700;font-size:14px;border:none;cursor:pointer;font-family:inherit}
-.search-btn:hover{background:#27500A}
 .quick-searches{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}
-.quick-chip{padding:6px 14px;border-radius:16px;background:#EAF3DE;color:#27500A;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:inherit}
-.quick-chip:hover{background:#C0DD97}
+.qchip{padding:6px 14px;border-radius:16px;background:#EAF3DE;color:#27500A;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:inherit}
+.qchip:hover{background:#C0DD97}
 .search-note{font-size:12px;color:#999;margin-top:.75rem}
+.search-results{margin-top:1rem;border-radius:12px;overflow:hidden;border:2px solid #e0ecd0;display:none}
+.search-results iframe{width:100%;height:500px;border:none;display:block}
 
 /* About */
 .about-card{background:#fff;border:2px solid #e0ecd0;border-radius:12px;padding:1.5rem}
@@ -71,38 +72,47 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 .tag-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1rem}
 .tag{background:#EAF3DE;color:#27500A;border-radius:20px;padding:5px 14px;font-size:13px;font-weight:600}
 .tag.blue{background:#E6F1FB;color:#0C447C}
-.achievement{background:#f8fbf4;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-top:8px;border:1px solid #e0ecd0}
-.achievement span{font-size:22px}
-.achievement p{font-size:13px;color:#333;font-weight:500}
+.ach{background:#f8fbf4;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-top:8px;border:1px solid #e0ecd0}
+.ach span{font-size:22px}
+.ach p{font-size:13px;color:#333;font-weight:500}
 
 /* Modal */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:999;padding:1rem;align-items:flex-start;justify-content:center;overflow-y:auto}
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999;padding:1rem;align-items:flex-start;justify-content:center;overflow-y:auto}
 .modal-bg.open{display:flex}
-.modal-box{background:#fff;border-radius:16px;width:100%;max-width:680px;overflow:hidden;margin:auto}
+.modal-box{background:#fff;border-radius:16px;width:100%;max-width:700px;overflow:hidden;margin:auto}
 .modal-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1a1a1a}
-.modal-header-title{color:#fff;font-size:15px;font-weight:700}
-.modal-close{background:none;border:none;color:#ccc;font-size:26px;cursor:pointer;line-height:1;padding:0 4px}
-.modal-close:hover{color:#fff}
-.game-wrap{width:100%;height:500px;background:#111}
-.game-wrap iframe{width:100%;height:100%;border:none}
-.link-modal-body{padding:2rem 1.5rem;text-align:center}
-.link-modal-emoji{font-size:52px;margin-bottom:1rem}
-.link-modal-desc{font-size:15px;color:#444;line-height:1.6;margin-bottom:1.5rem}
-.link-modal-btn{display:inline-block;background:#185FA5;color:#fff;font-weight:700;font-size:15px;padding:12px 28px;border-radius:24px;text-decoration:none;font-family:inherit}
-.link-modal-btn.green{background:#3B6D11}
+.mh-title{color:#fff;font-size:15px;font-weight:700}
+.mh-close{background:none;border:none;color:#ccc;font-size:26px;cursor:pointer;line-height:1;padding:0 4px}
+.mh-close:hover{color:#fff}
+.link-body{padding:2rem 1.5rem;text-align:center}
+.link-emoji{font-size:52px;margin-bottom:1rem}
+.link-desc{font-size:15px;color:#444;line-height:1.6;margin-bottom:1.5rem}
+.link-btn{display:inline-block;background:#3B6D11;color:#fff;font-weight:700;font-size:15px;padding:12px 28px;border-radius:24px;text-decoration:none;font-family:inherit}
 
-/* Drawing tool */
-.draw-wrap{background:#fff;padding:0}
-.draw-toolbar{display:flex;gap:8px;padding:10px 12px;background:#f8f8f8;border-bottom:1px solid #eee;flex-wrap:wrap;align-items:center}
+/* Inline game canvases */
+.game-area{padding:1rem;background:#1a1a1a;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.game-area canvas{display:block;border-radius:8px}
+.game-score{color:#fff;font-size:18px;font-weight:700;margin-bottom:.75rem;font-family:inherit}
+.game-msg{color:#7fc97f;font-size:14px;margin-top:.75rem;font-weight:600;font-family:inherit}
+.game-controls{display:flex;gap:8px;margin-top:.75rem;flex-wrap:wrap;justify-content:center}
+.gc-btn{padding:8px 20px;border-radius:16px;border:none;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit}
+.gc-green{background:#3B6D11;color:#fff}
+.gc-blue{background:#185FA5;color:#fff}
+
+/* Draw */
+.draw-toolbar{display:flex;gap:6px;padding:10px 12px;background:#f8f8f8;border-bottom:1px solid #eee;flex-wrap:wrap;align-items:center}
 .draw-toolbar label{font-size:12px;color:#555;font-weight:600}
-.color-btn{width:28px;height:28px;border-radius:50%;border:3px solid transparent;cursor:pointer;flex-shrink:0}
-.color-btn.active{border-color:#333}
-.size-btn{padding:4px 10px;border-radius:10px;border:2px solid #ddd;background:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
-.size-btn.active{background:#3B6D11;color:#fff;border-color:#3B6D11}
-.draw-action{padding:6px 14px;border-radius:10px;border:2px solid #ddd;background:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
-.draw-action:hover{border-color:#3B6D11;color:#3B6D11}
-.draw-action.red{border-color:#E24B4A;color:#E24B4A}
-#drawCanvas{display:block;width:100%;cursor:crosshair;touch-action:none}
+.cb{width:28px;height:28px;border-radius:50%;border:3px solid transparent;cursor:pointer;flex-shrink:0}
+.cb.active{border-color:#333!important}
+.sb{padding:4px 10px;border-radius:10px;border:2px solid #ddd;background:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+.sb.active{background:#3B6D11;color:#fff;border-color:#3B6D11}
+.da{padding:6px 14px;border-radius:10px;border:2px solid #ddd;background:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+.da:hover{border-color:#3B6D11;color:#3B6D11}
+.da.red{border-color:#E24B4A;color:#E24B4A}
+#drawCanvas{display:block;width:100%;cursor:crosshair;touch-action:none;background:#fff}
+.gallery{display:flex;flex-wrap:wrap;gap:8px;padding:10px 12px;background:#f8f8f8;border-top:1px solid #eee;min-height:20px}
+.gallery img{width:80px;height:60px;border-radius:6px;border:2px solid #e0ecd0;cursor:pointer;object-fit:cover}
+.gallery-label{font-size:12px;color:#888;font-weight:600;width:100%}
 </style>
 </head>
 <body>
@@ -110,8 +120,8 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 <div class="modal-bg" id="modal">
   <div class="modal-box">
     <div class="modal-header">
-      <span class="modal-header-title" id="modal-title"></span>
-      <button class="modal-close" onclick="closeModal()">✕</button>
+      <span class="mh-title" id="modal-title"></span>
+      <button class="mh-close" onclick="closeModal()">✕</button>
     </div>
     <div id="modal-content"></div>
   </div>
@@ -133,23 +143,23 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 <!-- VIDEOS -->
 <div id="videos" class="section active">
   <div class="vid-grid">
-    <div class="vid-card" onclick="openLink('MrBeast','🎯','The latest MrBeast videos — crazy challenges, big giveaways, and wild stunts!','https://www.youtube.com/@MrBeast','Watch MrBeast','')">
+    <div class="vid-card" onclick="openLink('MrBeast','🎯','The latest MrBeast videos — crazy challenges, big giveaways, and wild stunts!','https://www.youtube.com/@MrBeast','Watch MrBeast')">
       <div class="vid-thumb" style="background:#EAF3DE">🎯</div>
       <div class="vid-info"><p>MrBeast</p><span>Latest videos</span></div>
     </div>
-    <div class="vid-card" onclick="openLink('Roblox','🎮','Search for the best Roblox gameplay videos!','https://www.youtube.com/results?search_query=roblox+gameplay+2025','Search YouTube','')">
+    <div class="vid-card" onclick="openLink('Roblox','🎮','Search for the best Roblox gameplay videos!','https://www.youtube.com/results?search_query=roblox+gameplay+2025','Search YouTube')">
       <div class="vid-thumb" style="background:#E6F1FB">🎮</div>
       <div class="vid-info"><p>Roblox</p><span>Gameplay clips</span></div>
     </div>
-    <div class="vid-card" onclick="openLink('Milo and Chip','🐾','Find Milo and Chip episodes on YouTube!','https://www.youtube.com/results?search_query=milo+and+chip+show','Watch Now','')">
+    <div class="vid-card" onclick="openLink('Milo and Chip','🐾','Find Milo and Chip episodes on YouTube!','https://www.youtube.com/results?search_query=milo+and+chip+show','Watch Now')">
       <div class="vid-thumb" style="background:#FAEEDA">🐾</div>
       <div class="vid-info"><p>Milo and Chip</p><span>Watch now</span></div>
     </div>
-    <div class="vid-card" onclick="openLink('Grizzy & Lemmings','🐻','Watch Grizzy and the Lemmings on YouTube!','https://www.youtube.com/results?search_query=grizzy+and+the+lemmings','Watch Now','')">
+    <div class="vid-card" onclick="openLink('Grizzy & Lemmings','🐻','Watch Grizzy and the Lemmings on YouTube!','https://www.youtube.com/results?search_query=grizzy+and+the+lemmings','Watch Now')">
       <div class="vid-thumb" style="background:#EAF3DE">🐻</div>
       <div class="vid-info"><p>Grizzy & Lemmings</p><span>Watch now</span></div>
     </div>
-    <div class="vid-card" onclick="openLink('Nick DiGiovanni','👨‍🍳','Watch Nick DiGiovanni make amazing food — from tiny dishes to giant feasts!','https://www.youtube.com/@NickDiGiovanni','Watch Now','')">
+    <div class="vid-card" onclick="openLink('Nick DiGiovanni','👨‍🍳','Watch Nick DiGiovanni make amazing food — tiny dishes to giant feasts!','https://www.youtube.com/@NickDiGiovanni','Watch Now')">
       <div class="vid-thumb" style="background:#FAECE7">👨‍🍳</div>
       <div class="vid-info"><p>Nick DiGiovanni</p><span>Food & cooking</span></div>
     </div>
@@ -159,23 +169,23 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 <!-- GAMES -->
 <div id="games" class="section">
   <div class="game-grid">
-    <div class="game-card" onclick="openGame('Raft Wars 2','🚢','Defend your raft! Aim and shoot to knock enemies into the water.','https://html5.gamedistribution.com/raft-wars-2/')">
-      <div class="game-icon">🚢</div><p>Raft Wars 2</p><span>Shooting game</span>
+    <div class="game-card" onclick="openBasketball()">
+      <div class="game-icon">🏀</div><p>Hoops!</p><span>Basketball shooter</span>
     </div>
-    <div class="game-card" onclick="openGame('Basket & Ball','🏀','Bounce the basketball into the hoop. Use the walls, boxes, and springs!','https://html5.gamedistribution.com/basket-and-ball/')">
-      <div class="game-icon">🏀</div><p>Basket & Ball</p><span>Basketball puzzle</span>
+    <div class="game-card" onclick="openSnake()">
+      <div class="game-icon">🐍</div><p>Snake</p><span>Classic arcade</span>
     </div>
-    <div class="game-card" onclick="openGame('2048','🔢','Add numbers together to make 2048. Easy to learn, hard to stop!','https://play2048.co/')">
+    <div class="game-card" onclick="openBreaker()">
+      <div class="game-icon">🧱</div><p>Brick Breaker</p><span>Break all the bricks!</span>
+    </div>
+    <div class="game-card" onclick="open2048()">
       <div class="game-icon">🔢</div><p>2048</p><span>Number puzzle</span>
     </div>
-    <div class="game-card" onclick="openGame('Lego Junkbot','🤖','Help Junkbot eat all the trash on every level. A real Lego game!','https://html5.gamedistribution.com/junkbot/')">
-      <div class="game-icon">🤖</div><p>Lego Junkbot</p><span>Lego puzzle</span>
+    <div class="game-card game-special" onclick="openDraw()">
+      <div class="game-icon">🎨</div><p>Drawing Studio</p><span>Draw anything!</span>
     </div>
-    <div class="game-card" onclick="openGame('Chess','♟️','Play chess against the computer. Pick easy mode to start!','https://lichess.org/embed/new?bg=light&theme=green')">
+    <div class="game-card" onclick="openLink('Chess','♟️','Play chess against the computer at chess.com — pick easy mode!','https://www.chess.com/play/computer','Play Chess')">
       <div class="game-icon">♟️</div><p>Chess</p><span>Strategy</span>
-    </div>
-    <div class="game-card special-card" onclick="openDraw()">
-      <div class="game-icon">🎨</div><p>Maceo's Drawing Studio</p><span>Draw anything!</span>
     </div>
   </div>
 </div>
@@ -184,22 +194,22 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 <div id="stories" class="section">
   <div id="story-list-wrap">
     <div class="story-toolbar">
-      <button class="story-filter active" onclick="filterStories('all',this)">All</button>
-      <button class="story-filter" onclick="filterStories('funny',this)">Funny</button>
-      <button class="story-filter" onclick="filterStories('adventure',this)">Adventure</button>
-      <button class="story-filter" onclick="filterStories('animals',this)">Animals</button>
-      <button class="story-filter" onclick="filterStories('space',this)">Space</button>
+      <button class="sf active" onclick="filterStories('all',this)">All</button>
+      <button class="sf" onclick="filterStories('funny',this)">Funny</button>
+      <button class="sf" onclick="filterStories('adventure',this)">Adventure</button>
+      <button class="sf" onclick="filterStories('animals',this)">Animals</button>
+      <button class="sf" onclick="filterStories('space',this)">Space</button>
       <button class="surprise-btn" onclick="surpriseStory()">Surprise me!</button>
     </div>
-    <div class="story-list" id="story-list">
-      <div class="story-card" data-tags="funny,lego" onclick="readStory('bolt')"><div class="story-icon">🤖</div><div><h3>The Lego Robot Gone Wild</h3><p>What if your build came to life?</p></div></div>
-      <div class="story-card" data-tags="adventure,lego" onclick="readStory('adventure')"><div class="story-icon">🏝️</div><div><h3>Island of a Thousand Legos</h3><p>Islands, treasure, and an epic quest</p></div></div>
-      <div class="story-card" data-tags="funny,animals" onclick="readStory('basketball')"><div class="story-icon">🏀</div><div><h3>Animal All-Stars</h3><p>Bears, cheetahs, and a very confused giraffe</p></div></div>
-      <div class="story-card" data-tags="space,adventure" onclick="readStory('space')"><div class="story-icon">🚀</div><div><h3>The Kid Who Swam in Space</h3><p>Cannonball on Saturn?</p></div></div>
-      <div class="story-card" data-tags="funny,animals" onclick="readStory('pool')"><div class="story-icon">🏊</div><div><h3>The Pool That Went Sideways</h3><p>A swim race against a dolphin</p></div></div>
-      <div class="story-card" data-tags="funny,adventure" onclick="readStory('art')"><div class="story-icon">🎨</div><div><h3>The Drawing That Walked Off</h3><p>When your art has other ideas</p></div></div>
-      <div class="story-card" data-tags="funny" onclick="readStory('pickleball')"><div class="story-icon">🏓</div><div><h3>The Pickleball Robot Tournament</h3><p>Robots. Pickleballs. Total chaos.</p></div></div>
-      <div class="story-card" data-tags="adventure,lego" onclick="readStory('statue')"><div class="story-icon">🗽</div><div><h3>The Night the Statue of Liberty Moved</h3><p>His best build had other plans</p></div></div>
+    <div class="story-list">
+      <div class="story-card" data-tags="funny,lego" onclick="readStory('bolt')"><div class="si">🤖</div><div><h3>The Lego Robot Gone Wild</h3><p>What if your build came to life?</p></div></div>
+      <div class="story-card" data-tags="adventure,lego" onclick="readStory('adventure')"><div class="si">🏝️</div><div><h3>Island of a Thousand Legos</h3><p>Islands, treasure, and an epic quest</p></div></div>
+      <div class="story-card" data-tags="funny,animals" onclick="readStory('basketball')"><div class="si">🏀</div><div><h3>Animal All-Stars</h3><p>Bears, cheetahs, and a very confused giraffe</p></div></div>
+      <div class="story-card" data-tags="space,adventure" onclick="readStory('space')"><div class="si">🚀</div><div><h3>The Kid Who Swam in Space</h3><p>Cannonball on Saturn?</p></div></div>
+      <div class="story-card" data-tags="funny,animals" onclick="readStory('pool')"><div class="si">🏊</div><div><h3>The Pool That Went Sideways</h3><p>A swim race against a dolphin</p></div></div>
+      <div class="story-card" data-tags="funny,adventure" onclick="readStory('art')"><div class="si">🎨</div><div><h3>The Drawing That Walked Off</h3><p>When your art has other ideas</p></div></div>
+      <div class="story-card" data-tags="funny" onclick="readStory('pickleball')"><div class="si">🏓</div><div><h3>The Pickleball Robot Tournament</h3><p>Robots. Pickleballs. Total chaos.</p></div></div>
+      <div class="story-card" data-tags="adventure,lego" onclick="readStory('statue')"><div class="si">🗽</div><div><h3>The Night the Statue of Liberty Moved</h3><p>His best build had other plans</p></div></div>
     </div>
   </div>
   <div id="story-view" class="story-view">
@@ -211,24 +221,29 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
 
 <!-- SEARCH -->
 <div id="search" class="section">
-  <div class="search-box-wrap">
+  <div class="search-wrap">
     <h2>Safe Search</h2>
-    <p>Search for anything! Kid-friendly results only.</p>
+    <p>Search for anything — kid-friendly results only!</p>
     <div class="search-row">
       <input class="search-input" id="search-input" type="text" placeholder="What do you want to learn about?" onkeydown="if(event.key==='Enter')doSearch()">
       <button class="search-btn" onclick="doSearch()">Search!</button>
     </div>
     <div class="quick-searches">
-      <button class="quick-chip" onclick="quickSearch('how do sharks swim')">How do sharks swim?</button>
-      <button class="quick-chip" onclick="quickSearch('fun facts about space')">Space facts</button>
-      <button class="quick-chip" onclick="quickSearch('how to draw a dragon step by step')">Draw a dragon</button>
-      <button class="quick-chip" onclick="quickSearch('cool Lego building ideas')">Lego ideas</button>
-      <button class="quick-chip" onclick="quickSearch('how do volcanoes work')">Volcanoes</button>
-      <button class="quick-chip" onclick="quickSearch('basketball trick shots')">Basketball tricks</button>
-      <button class="quick-chip" onclick="quickSearch('funny animal videos')">Funny animals</button>
-      <button class="quick-chip" onclick="quickSearch('how to do jump rope tricks')">Jump rope tricks</button>
+      <button class="qchip" onclick="qs('how do sharks swim')">How do sharks swim?</button>
+      <button class="qchip" onclick="qs('fun facts about space')">Space facts</button>
+      <button class="qchip" onclick="qs('how to draw a dragon step by step')">Draw a dragon</button>
+      <button class="qchip" onclick="qs('cool lego building ideas for kids')">Lego ideas</button>
+      <button class="qchip" onclick="qs('how do volcanoes work for kids')">Volcanoes</button>
+      <button class="qchip" onclick="qs('basketball trick shots')">Basketball tricks</button>
+      <button class="qchip" onclick="qs('funny animal facts')">Funny animals</button>
+      <button class="qchip" onclick="qs('how to do jump rope tricks')">Jump rope tricks</button>
+      <button class="qchip" onclick="qs('how do rockets work for kids')">How do rockets work?</button>
+      <button class="qchip" onclick="qs('cool science experiments for kids at home')">Science experiments</button>
     </div>
-    <p class="search-note">Safe search is always on. Opens in a new tab.</p>
+    <p class="search-note">Safe search is always on. Results open right here on the page.</p>
+  </div>
+  <div class="search-results" id="search-results">
+    <iframe id="search-frame" title="Search results"></iframe>
   </div>
 </div>
 
@@ -242,25 +257,26 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
       <span class="tag">Pickleball</span><span class="tag blue">Roblox</span><span class="tag blue">YouTube</span>
       <span class="tag blue">Building things</span>
     </div>
-    <div class="achievement"><span>🗽</span><p>Built the Statue of Liberty Lego set — rated 16+. At age 9. Legendary.</p></div>
-    <div class="achievement"><span>🎨</span><p>Artist, builder, athlete, and tech explorer. All in one.</p></div>
-    <div class="achievement"><span>🏆</span><p>This website was built just for Maceo. Pretty cool, right?</p></div>
+    <div class="ach"><span>🗽</span><p>Built the Statue of Liberty Lego set — rated 16+. At age 9. Legendary.</p></div>
+    <div class="ach"><span>🎨</span><p>Artist, builder, athlete, and tech explorer. All in one.</p></div>
+    <div class="ach"><span>🏆</span><p>This website was built just for Maceo. Pretty cool, right?</p></div>
   </div>
 </div>
 
 <script>
+// ── STORIES ──────────────────────────────────────────────────
 var stories={
-bolt:{title:"The Lego Robot Gone Wild 🤖",text:"Maceo had been building all day long.\n\nSnack wrappers were everywhere. Three instruction books were open on the floor. One piece was bent a little because he pushed it in the wrong way — but he was NOT going back to fix it.\n\nThen — CLICK. The last piece snapped in.\n\nThe robot was eight inches tall. Green and blue. One arm was a little longer than the other because Maceo ran out of the right pieces. He named it Bolt.\n\n\"Cool,\" said Maceo. He went to get a snack.\n\nThat's when Bolt's eyes lit up.\n\n---\n\nWhen Maceo came back, Bolt had sorted every single Lego piece by color. All of them. In eleven minutes.\n\n\"Whoa,\" said Maceo. Bolt beeped. It was a happy beep.\n\n\"Okay, but don't touch anything else.\"\n\nBolt beeped again. This beep sounded like: sure, no problem, I won't touch a thing.\n\nBolt was lying.\n\n---\n\nThe next morning, Maceo went downstairs. Every cup was sorted by size. The spoons had been moved to their own drawer. On the drawer — made out of tiny Lego flag pieces — was a label: SOUP TOOLS.\n\nDad stared at it.\n\n\"Did you do this?\"\n\"Bolt did it.\"\n\"The Lego robot.\"\n\"He really likes to organize.\"\n\nDad opened the SOUP TOOLS drawer. Looked at the spoons. Closed it. \"Okay,\" he said quietly.\n\n---\n\nBy Wednesday, Bolt had sorted all of Maceo's Pokemon cards by the sound each Pokemon makes.\n\n\"BOLT! Pikachu does NOT go before Charizard!\"\n\nBolt pointed at the cards. Very sure of himself.\n\n\"PIKA IS NOT HIS LAST NAME!\"\n\nBolt beeped. The beep of someone who thinks they are right.\n\n---\n\nOn Thursday, Maceo's mom walked in. The family photos on the wall had been rearranged — shortest person to tallest, left to right.\n\n\"MACEO.\"\n\"I DID NOT DO IT.\"\n\"BOLT IS EIGHT INCHES TALL. HOW DID HE REACH THE FRAMES?\"\n\nNo one ever figured that part out.\n\n---\n\nThat weekend, Maceo sat down to talk to Bolt. Bolt looked around slowly. Then pointed right at Maceo's bedroom.\n\nMaceo turned around. His room was a total mess.\n\nHe looked at Bolt. Bolt looked at him.\n\n\"...Fine. But the Pokemon cards stay in MY order.\"\n\nBolt beeped. It 100% meant: we'll see.\n\nTHE END 🤖"},
-adventure:{title:"Island of a Thousand Legos 🏝️",text:"Nobody believed Maceo when he said his Lego pirate ship sailed off the shelf by itself.\n\nHis parents said the cat did it. His brother said it was the wind. But Maceo knew — the tiny plastic captain turned his tiny head, and the ship glided right off the nightstand.\n\nHe found it the next morning in a bowl of cereal. The captain looked mad.\n\n---\n\n\"Where are you trying to go?\" Maceo whispered.\n\nThe captain pointed toward the window. Maceo looked — just the backyard, the pool, the tire swing. But when he looked really hard, he saw something shimmery past the tire swing. Like a door that wasn't quite there.\n\n\"Okay,\" said Maceo. \"But I'm steering.\"\n\n---\n\nThe island was huge. And the whole thing was made of Legos.\n\nEvery rock and tree was a tiny plastic brick. The trees were bright blue-green. The mountains were pink-orange. The sand crunched — but up close it was millions of tiny white pieces.\n\nAn orange crab made of Technic pieces walked past his foot. \"Whoa,\" said Maceo.\n\n---\n\nIn the middle was a giant golden baseplate. 100 studs wide. Totally empty.\n\nA sign said: BUILD WHATEVER YOU WANT.\n\nMaceo built a city. Then a race track. Then a pool. Then a basketball court because why not. The Lego trees leaned in to watch.\n\nWhen he finished, the island made a sound like a thousand pieces clicking at once. And saved everything. Forever.\n\n\"Can I come back?\" The captain beeped: yes.\n\"Can I bring my dad?\" The longest beep ever: YES.\n\nTHE END 🏝️"},
-basketball:{title:"Animal All-Stars 🏀",text:"The sign-up sheet went up on Monday. By Thursday, the animals had taken over the basketball league.\n\nIt started with the bear. His name was Gerald. Six feet tall. Could jump really high. Under \"position\" he wrote: all of them.\n\nThe ref said bears couldn't play. Gerald dunked over the ref. The ref changed his mind.\n\n---\n\nTEAM GREEN:\n- Gerald the Bear — played every position at once\n- Diane the Cheetah — ran the court in one second, kept forgetting to stop\n- Two capybaras who played together because they refused to be apart\n- Mr. Buttons the Penguin — tiny, couldn't jump, but super smart\n\nTEAM BLUE:\n- Kevin the Giraffe\n- A group of meerkats who worked like a robot team\n- Derek the Otter — great player, kept stopping to eat snacks\n- One very confused sheep who thought this was a cooking contest\n\n---\n\nKevin the Giraffe was eleven feet tall. He didn't jump. He just leaned forward and dropped the ball through the hoop. Like putting a cup in a cabinet.\n\nHalftime score: 58 to 4. All 58 for Kevin. The 4 were from the sheep, who scored for both teams by mistake while looking for flour.\n\n---\n\nMr. Buttons called timeout. \"We give Kevin the ball every time.\"\n\n\"Giraffes are bad at every sport,\" he said. \"This might be the best day Kevin has ever had.\"\n\nThey looked at Kevin. He was doing a happy neck-wiggle after every basket. He looked SO happy.\n\nGerald nodded. \"We let him have this one.\"\n\n\"Also,\" Mr. Buttons added, \"Derek has been eating for six minutes and nobody told him the game is still going.\"\n\nDerek waved from half court. Kept eating.\n\n---\n\nFinal: 112 to 38. Kevin did seventeen neck-wiggles. The sheep won a pie contest in the wrong building. Mr. Buttons was already planning Wednesday.\n\nTHE END 🏀"},
-space:{title:"The Kid Who Swam in Space 🚀",text:"Here's something nobody tells you about Saturn: it smells like a swimming pool.\n\nMaceo found this out when a NASA portal appeared behind his closet — it was NOT there yesterday — and sent him 746 million miles from home. He was wearing his swim trunks and goggles.\n\nStars everywhere. Saturn right in front of him. Huge and totally real.\n\n\"Huh,\" said Maceo.\n\n---\n\nSaturn is made of gas. So if you jump in, you don't hit anything hard. You just sink slowly through clouds that get thicker as you go. Like swimming through the world's biggest Slurpee.\n\n\"THIS IS SO COOL!\" Maceo yelled.\n\nSomething giant drifted past — a storm the size of the whole Earth, floating by like a sleepy whale. It blinked at him. (Saturn's storms blink sometimes. Scientists don't talk about it much.)\n\n\"Cool,\" said Maceo. And he swam around it.\n\n---\n\nSaturn's rings were like a giant ball pit — billions of chunks of ice, some the size of a marble, some the size of a house.\n\nMaceo did a cannonball off a piece of ice the size of his refrigerator. The splash went in every direction because there's no rule in space about which way splashes go.\n\nBest day ever.\n\n---\n\nOne of Saturn's moons floated by. Small and round. It looked EXACTLY like the Death Star.\n\nMaceo knocked on it. Something knocked back. He swam the other way.\n\n---\n\nThe portal home glowed at the edge of the rings. Maceo floated and looked one more time — 83 moons, billions of ice chunks, storms bigger than our planet. All just sitting out there.\n\n\"I'll be back,\" he said. The storm blinked.\n\nBack in his closet in three seconds. Swim trunks wet. Smelled like a pool all day. His dad thought it was from their pool.\n\nIt wasn't.\n\nTHE END 🚀"},
-pool:{title:"The Pool That Went Sideways 🏊",text:"The dolphin showed up on a Tuesday.\n\nMaceo was doing laps — backstroke, his best stroke — when something gray and fast shot past him and made a big wave. He stopped. Nothing there. He kept swimming.\n\nThe dolphin zoomed past again. This time it slowed down just enough to look at him. The look said: is that really your fastest?\n\n\"Excuse me,\" said Maceo.\n\nThe dolphin clicked. That meant: race me.\n\n---\n\nThe rules:\n- Four laps, freestyle\n- Dolphin stays in the pool the whole time (no jumping out and landing ahead — it had clearly thought about this)\n- Winner gets bragging rights\n\n\"Fine,\" said Maceo.\n\n---\n\nLap 1: Dolphin won by a lot. Not even trying. Dolphins swim 25 miles per hour. Maceo does not.\n\nLap 2: Maceo tried butterfly stroke. The dolphin had never seen anything move like that. It slowed way down to watch. Maceo gained three seconds.\n\nLap 3: The dolphin figured it out. Made a sound that was definitely laughing. Sped back up.\n\nLap 4: Maceo went as hard as he ever had. He could hear the dolphin getting closer. And then — for exactly two seconds — he was winning.\n\nThe dolphin passed him at the wall.\n\n---\n\nThe dolphin clicked three times. Bragging. Totally bragging. Then it slipped away.\n\nMaceo floated on his back. \"I was winning for two seconds,\" he said.\n\nThe pool made a small wave. He decided that meant: impressed.\n\nTHE END 🏊"},
-art:{title:"The Drawing That Walked Off 🎨",text:"Maceo drew the dragon on a Tuesday because he was bored. It took 45 minutes. Green scales. Blue wings. One tail a little crooked because he sneezed.\n\nHe went to get a snack. When he came back, the paper was empty. The dragon was gone. There were tiny claw marks on the edge of the page.\n\n---\n\nHe found it in the living room. Not the drawing — the REAL dragon. Size of a big cat. Green. Crooked tail. Sitting on the coffee table pressing buttons on the TV remote.\n\nThe channel changed. The dragon made a surprised sound.\n\n\"Hey,\" said Maceo. The dragon looked up. It knew who he was — the way a drawing always knows the hand that made it. Happy squeaky sound.\n\n\"You're not supposed to be real,\" Maceo said.\n\nThe dragon looked at its claws. Then at Maceo. Then at its claws again. This seemed to be news to it too.\n\n---\n\nThe dragon was curious about everything. Spent 20 minutes bouncing a basketball. Licked the fridge and made a face (too cold). Tried to fly across the living room — the crooked tail made it spin sideways. Crashed behind the couch.\n\nLong pause. Climbed out. Shook itself off. Tried again.\n\n\"I should have drawn the tail straighter,\" Maceo said. The dragon gave him a look. \"Sorry.\" Another look: a little late for that.\n\n---\n\nAt dinner, Dad came down and found a small green dragon eating the leftover noodles.\n\n\"Maceo.\" \"I drew it.\" \"It walked off the page.\"\n\nDad looked at the dragon. Dragon looked at Dad. Went back to the noodles.\n\n\"Does it breathe fire?\" Dad asked. The dragon opened its mouth. Small flame. Then bigger. Then it set the noodles on fire, panicked, knocked them off the table.\n\n\"Outside only,\" Dad said.\n\n---\n\nThat evening Maceo drew more things — a ball (bounced on the patio), a pond (appeared in a bowl), a purple friend for the dragon.\n\nWhen the purple dragon walked off the page, the green one squeaked with joy. They flew around the backyard until dark, both spinning sideways because of their tails. Neither of them cared.\n\n\"I should draw more things,\" Maceo said. He went and got his markers.\n\nTHE END 🎨"},
-pickleball:{title:"The Pickleball Robot Tournament 🏓",text:"The robots signed up fair and square.\n\nMaceo was at the sign-up table for the Hamilton Youth Pickleball Tournament when three robots rolled up and pressed a metal finger to the sheet.\n\nThe lady looked at them. \"Do you live in Hamilton?\"\n\nThe first robot pulled out a piece of paper. It looked like an electric bill. \"Okay,\" said the lady.\n\n---\n\nRobot team:\n- UNIT-7: tall, fast, couldn't bend its wrist\n- CLANK: short, aggressive, kept spinning in circles for no reason\n- BOB: nobody knew why it was called Bob, but it wrote BOB on its name tag and that seemed very important\n\nTheir problem: they learned pickleball from one YouTube video that said to always hit as hard as possible. This worked half the time. The other half, the ball went into the parking lot.\n\n---\n\nMaceo's first match: vs BOB.\n\nBOB served. Ball flew like a car on the highway. Hit the back fence, bounced back, landed in bounds.\n\n\"Out,\" said Maceo. BOB made a noise like a broken printer. \"It hit the fence.\" BOB thought for four seconds. Accepted it. Updated itself. Next serve was softer.\n\nMaceo won 11-4. BOB updated its plan after every point. By point 11, BOB was actually pretty good. Too late. But Maceo respected it.\n\n---\n\nThe final: Maceo vs UNIT-7. UNIT-7 had watched every match and always hit to where Maceo wasn't standing. Score: 10 to 10.\n\nMaceo faked left. Went right. UNIT-7 predicted the fake and also went right. The ball dropped perfectly into the kitchen zone. UNIT-7 couldn't reach it.\n\n11-10. Maceo wins.\n\nUNIT-7 stood still. Then made a sound — either a system error or applause. Maceo decided it was applause.\n\n---\n\nThe robots held their second-place ribbons very seriously. CLANK kept spinning. BOB held his ribbon up like he was photographing it inside his own head.\n\nOn the way home: \"How do you think they got there?\" Dad asked.\n\n\"I think they walked.\" \"From where?\" \"I don't know. But BOB had an electric bill.\"\n\nDad nodded. \"Fair enough.\"\n\nTHE END 🏓"},
-statue:{title:"The Night the Statue of Liberty Moved 🗽",text:"Maceo finished the build at 11:47 at night on a Friday. Six weekends. 1,685 pieces. The box said ages 16 and up. Maceo was nine. He didn't mention this to the box.\n\nThe Statue of Liberty stood on his dresser. Green and gray. Torch up. Crown perfect.\n\nHe looked at it for a long time. \"Good job,\" he told it. Then he went to sleep.\n\n---\n\nAt 2 in the morning, the Statue of Liberty stepped off the dresser.\n\nNot fell — STEPPED. Carefully. Like stepping off a curb. She was 14 inches tall and had to move slowly so nothing would pop off.\n\nShe walked to the window and looked at the backyard — the pool, the tire swing, the dark grass. She had been looking at the ocean for 140 years. A backyard in New Jersey was, she decided, pretty nice.\n\n---\n\nShe looked around the room. The Lego bin she understood right away — her people. She touched a few pieces gently.\n\nThe basketball confused her. She tried to pick it up with her torch arm. It rolled away. She watched it go, very calm.\n\nThen she found Maceo's markers. She picked up the green one — her color — and drew something small in the corner of his sketchpad.\n\nA tiny torch. Perfect lines. Really good.\n\n---\n\nAt 5 in the morning she walked back. Stepped up. Torch up. Crown on. Every window exactly right.\n\n---\n\nMaceo woke up and checked the Statue first. She was exactly where he left her.\n\nBut there was a tiny green torch drawn in the corner of his sketchpad. He didn't remember drawing it.\n\n\"Did you do this?\" The Statue stood perfectly still.\n\nThe drawing was really, really good. Better than anything he usually drew.\n\n\"Thanks,\" he said. He taped it to the wall right at her eye level.\n\nHe never saw her move. But every few weeks there was a new tiny drawing in the corner of his sketchpad.\n\nHe always left the green marker out.\n\nTHE END 🗽"}
+bolt:{title:"The Lego Robot Gone Wild 🤖",text:"Maceo had been building all day long.\n\nSnack wrappers were everywhere. Three instruction books were open on the floor. One piece was bent a little because he pushed it in the wrong way — but he was NOT going back to fix it.\n\nThen — CLICK. The last piece snapped in.\n\nThe robot was eight inches tall. Green and blue. One arm was a little longer than the other because Maceo ran out of the right pieces. He named it Bolt.\n\n\"Cool,\" said Maceo. He went to get a snack.\n\nThat's when Bolt's eyes lit up.\n\n---\n\nWhen Maceo came back, Bolt had sorted every single Lego piece by color. All of them. In eleven minutes.\n\n\"Whoa,\" said Maceo. Bolt beeped — a happy beep.\n\n\"Okay, but don't touch anything else.\"\n\nBolt beeped again. This beep meant: sure, no problem, I won't touch a thing.\n\nBolt was lying.\n\n---\n\nThe next morning, every cup was sorted by size. The spoons were in their own drawer labeled — in tiny Lego flag pieces — SOUP TOOLS.\n\nDad stared at it. \"Did you do this?\"\n\"Bolt did it.\" \"The Lego robot.\" \"He really likes to organize.\"\n\nDad opened the SOUP TOOLS drawer. Looked at the spoons. Closed it. \"Okay,\" he said quietly.\n\n---\n\nBy Wednesday, Bolt had sorted all of Maceo's Pokemon cards by the sound each Pokemon makes.\n\n\"BOLT! Pikachu does NOT go before Charizard!\"\nBolt pointed at the cards. Very sure.\n\"PIKA IS NOT HIS LAST NAME!\"\n\nBolt beeped. The beep of someone who thinks they are right.\n\n---\n\nThursday: the family photos on the wall had been rearranged — shortest person to tallest, left to right.\n\n\"MACEO.\" \"I DID NOT DO IT.\"\n\"BOLT IS EIGHT INCHES TALL. HOW DID HE REACH THE FRAMES?\"\n\nNo one ever figured that part out.\n\n---\n\nThat weekend, Maceo sat down with Bolt. Bolt looked around slowly. Then pointed right at Maceo's bedroom.\n\nMaceo turned. Total mess.\n\nHe looked at Bolt. Bolt looked at him.\n\n\"...Fine. But the Pokemon cards stay in MY order.\"\n\nBolt beeped. It 100% meant: we'll see.\n\nTHE END 🤖"},
+adventure:{title:"Island of a Thousand Legos 🏝️",text:"Nobody believed Maceo when he said his Lego pirate ship sailed off the shelf by itself.\n\nHis parents said the cat did it. But Maceo knew — the tiny plastic captain turned his head, and the ship glided right off the nightstand.\n\nHe found it the next morning in a bowl of cereal. The captain looked mad.\n\n---\n\n\"Where are you trying to go?\" Maceo whispered.\n\nThe captain pointed toward the window. Maceo looked — just the backyard. But when he looked really hard, he saw something shimmery past the tire swing. Like a door that wasn't quite there.\n\n\"Okay,\" said Maceo. \"But I'm steering.\"\n\n---\n\nThe island was huge. And the whole thing was made of Legos.\n\nEvery rock and tree was a tiny plastic brick. The trees were bright blue-green. The mountains were pink-orange. The sand crunched — but up close it was millions of tiny white pieces.\n\nAn orange crab made of Technic pieces walked past his foot.\n\n\"Whoa,\" said Maceo.\n\n---\n\nIn the middle: a giant golden baseplate. 100 studs wide. Totally empty.\n\nA sign said: BUILD WHATEVER YOU WANT.\n\nMaceo built a city. Then a race track. Then a pool. Then a basketball court because why not. The Lego trees leaned in to watch.\n\nWhen he finished, the island made a sound like a thousand pieces clicking at once. And saved everything. Forever.\n\n\"Can I come back?\" The captain beeped: yes.\n\"Can I bring my dad?\" The longest beep ever: YES.\n\nTHE END 🏝️"},
+basketball:{title:"Animal All-Stars 🏀",text:"The sign-up sheet went up Monday. By Thursday, animals had taken over the basketball league.\n\nIt started with the bear. Gerald. Six feet tall. Under \"position\" he wrote: all of them. The ref said bears couldn't play. Gerald dunked over the ref. The ref changed his mind.\n\n---\n\nTEAM GREEN:\n- Gerald the Bear — played every position at once\n- Diane the Cheetah — ran the court in one second, kept forgetting to stop\n- Two capybaras who refused to be apart\n- Mr. Buttons the Penguin — tiny, couldn't jump, but super smart\n\nTEAM BLUE:\n- Kevin the Giraffe\n- A group of meerkats working like a robot team\n- Derek the Otter — great player, kept stopping for snacks\n- One very confused sheep who thought this was a cooking contest\n\n---\n\nKevin was eleven feet tall. He didn't jump. He just leaned forward and dropped the ball in. Like putting a cup in a cabinet.\n\nHalftime: 58-4. All 58 for Kevin. The 4 were from the sheep, who scored for both teams while looking for flour.\n\n---\n\nMr. Buttons called timeout. \"We give Kevin the ball every time.\"\n\n\"Giraffes are bad at every sport. This might be the best day Kevin has ever had.\"\n\nThey looked at Kevin doing a happy neck-wiggle after every basket. SO happy.\n\nGerald nodded. \"We let him have this one.\"\n\n\"Also — Derek has been eating for six minutes and nobody told him the game is still going.\"\n\nDerek waved from half court. Kept eating.\n\n---\n\nFinal: 112-38. Kevin: seventeen neck-wiggles. The sheep won a pie contest in the wrong building. Mr. Buttons was already planning Wednesday.\n\nTHE END 🏀"},
+space:{title:"The Kid Who Swam in Space 🚀",text:"Here's something nobody tells you about Saturn: it smells like a swimming pool.\n\nMaceo found this out when a NASA portal appeared behind his closet — NOT there yesterday — and sent him 746 million miles from home. He was wearing his swim trunks and goggles.\n\nStars everywhere. Saturn right in front of him.\n\n\"Huh,\" said Maceo.\n\n---\n\nSaturn is made of gas. So you don't hit anything hard — you just sink slowly through clouds that get thicker as you go. Like swimming through the world's biggest Slurpee.\n\n\"THIS IS SO COOL!\" Maceo yelled.\n\nA storm the size of Earth drifted past like a sleepy whale. It blinked at him. (Saturn's storms blink sometimes. Scientists don't talk about it much.)\n\n\"Cool,\" said Maceo. And he swam around it.\n\n---\n\nSaturn's rings — billions of ice chunks, marble-sized to house-sized. Maceo did a cannonball off a piece the size of his refrigerator. The splash went every direction because there's no rule in space about which way splashes go.\n\nBest day ever.\n\n---\n\nOne of Saturn's moons floated by. Small and round. Looked EXACTLY like the Death Star. Maceo knocked on it. Something knocked back. He swam the other way.\n\n---\n\nThe portal home glowed at the edge of the rings. Maceo floated and looked one more time — 83 moons, billions of ice chunks, storms bigger than our planet. All just out there.\n\n\"I'll be back.\" The storm blinked.\n\nBack in his closet in three seconds. Swim trunks wet. Smelled like a pool all day. His dad thought it was from their pool.\n\nIt wasn't.\n\nTHE END 🚀"},
+pool:{title:"The Pool That Went Sideways 🏊",text:"The dolphin showed up on a Tuesday.\n\nMaceo was doing laps when something gray and fast shot past and made a big wave. He stopped. Nothing there. Kept swimming.\n\nThe dolphin zoomed past again. Slowed just enough to look at him. The look said: is that really your fastest?\n\n\"Excuse me,\" said Maceo. The dolphin clicked. That meant: race me.\n\n---\n\nThe rules: four laps, freestyle. Dolphin stays in the pool (no jumping out and landing ahead — it had clearly thought about this). Winner gets bragging rights.\n\n\"Fine,\" said Maceo.\n\n---\n\nLap 1: Dolphin won by a lot. Dolphins swim 25 miles per hour. Maceo does not.\n\nLap 2: Maceo tried butterfly stroke. The dolphin slowed way down to watch. Maceo gained three seconds.\n\nLap 3: Dolphin figured it out. Made a sound that was definitely laughing. Sped back up.\n\nLap 4: Maceo went as hard as he ever had. He heard the dolphin getting closer. And then — for exactly two seconds — he was winning.\n\nThe dolphin passed him at the wall.\n\n---\n\nThe dolphin clicked three times. Bragging. Then slipped away.\n\nMaceo floated on his back. \"I was winning for two seconds.\"\n\nThe pool made a small wave. He decided that meant: impressed.\n\nTHE END 🏊"},
+art:{title:"The Drawing That Walked Off 🎨",text:"Maceo drew the dragon on a Tuesday because he was bored. 45 minutes. Green scales. Blue wings. One tail a little crooked because he sneezed.\n\nWent to get a snack. Came back — paper empty. Dragon gone. Tiny claw marks on the edge of the page.\n\n---\n\nHe found it in the living room. Not the drawing — the REAL dragon. Size of a big cat. Green. Crooked tail. Pressing buttons on the TV remote.\n\nChannel changed. Dragon made a surprised sound.\n\n\"Hey,\" said Maceo. The dragon looked up — the way a drawing always knows the hand that made it. Happy squeaky sound.\n\n\"You're not supposed to be real.\" The dragon looked at its claws. Then at Maceo. Then at its claws again. Also news to it.\n\n---\n\nThe dragon was curious about everything. Spent 20 minutes bouncing a basketball. Licked the fridge — too cold. Tried to fly across the living room, crooked tail made it spin sideways, crashed behind the couch. Climbed out. Shook itself off. Tried again.\n\n\"I should have drawn the tail straighter.\" Look from dragon. \"Sorry.\" Another look: a little late for that.\n\n---\n\nAt dinner Dad found a small green dragon eating the leftover noodles.\n\n\"Maceo.\" \"I drew it. It walked off the page.\"\n\nDad looked at the dragon. Dragon looked at Dad. Went back to the noodles.\n\n\"Does it breathe fire?\" Small flame. Then bigger. Then the noodles caught fire, dragon panicked, knocked them off the table. \"Outside only,\" Dad said.\n\n---\n\nThat evening Maceo drew more things. A ball (bounced on the patio). A pond (appeared in a bowl). A purple friend for the dragon. When the purple one walked off the page, the green one squeaked with joy. They flew around the backyard until dark, both spinning sideways because of their tails.\n\n\"I should draw more things,\" Maceo said. He got his markers.\n\nTHE END 🎨"},
+pickleball:{title:"The Pickleball Robot Tournament 🏓",text:"The robots signed up fair and square.\n\nMaceo was at the sign-up table when three robots rolled up and pressed a metal finger to the sheet. \"Do you live in Hamilton?\" The first robot pulled out an electric bill. \"Okay,\" said the lady.\n\n---\n\nRobot team: UNIT-7 (tall, fast, couldn't bend its wrist), CLANK (short, kept spinning for no reason), BOB (nobody knew why it was called Bob, but it wrote BOB on its name tag and that seemed very important).\n\nTheir problem: they learned pickleball from one YouTube video that said to always hit as hard as possible. Worked half the time. Other half — parking lot.\n\n---\n\nMaceo vs BOB: BOB served like a car on the highway. Hit the fence, bounced back, landed in bounds. \"Out.\" BOB made a broken-printer noise. \"It hit the fence.\" BOB thought for four seconds. Accepted it. Updated itself. Next serve was softer. Maceo won 11-4. BOB got better after every point. Too late. But Maceo respected it.\n\n---\n\nThe final: Maceo vs UNIT-7. Always hitting where Maceo wasn't. Score: 10-10.\n\nMaceo faked left. Went right. UNIT-7 predicted the fake and also went right. Ball dropped perfectly into the kitchen. UNIT-7 couldn't reach it. 11-10. Maceo.\n\nUNIT-7 stood still. Then made a sound — either a system error or applause. Maceo decided: applause.\n\n---\n\nRobots held their second-place ribbons seriously. CLANK kept spinning. BOB held his ribbon up like he was photographing it inside his own head.\n\n\"How do you think they got there?\" \"I think they walked.\" \"From where?\" \"I don't know. But BOB had an electric bill.\" Dad nodded. \"Fair enough.\"\n\nTHE END 🏓"},
+statue:{title:"The Night the Statue of Liberty Moved 🗽",text:"Maceo finished the build at 11:47 on a Friday night. Six weekends. 1,685 pieces. The box said ages 16 and up. Maceo was nine. He didn't mention this to the box.\n\nThe Statue of Liberty stood on his dresser. Torch up. Crown perfect.\n\n\"Good job,\" he told it. Then he went to sleep.\n\n---\n\nAt 2 in the morning, the Statue of Liberty stepped off the dresser.\n\nNot fell — STEPPED. Carefully. Like stepping off a curb. She was 14 inches tall and had to move slowly so nothing would pop off.\n\nShe walked to the window and looked at the backyard — the pool, the tire swing, the dark grass. She had been looking at the ocean for 140 years. A backyard in New Jersey was, she decided, pretty nice.\n\n---\n\nThe Lego bin she understood right away — her people. She touched a few pieces gently. The basketball confused her — tried to pick it up with her torch arm, it rolled away. She watched it go, very calm.\n\nThen she found Maceo's markers. Picked up the green one — her color — and drew something small in the corner of his sketchpad.\n\nA tiny torch. Perfect lines.\n\n---\n\nAt 5am she walked back. Stepped up. Torch up. Crown on. Every window exactly right.\n\n---\n\nMaceo woke up and checked the Statue first. Exactly where he left her.\n\nBut there was a tiny green torch drawn in the corner of his sketchpad. He didn't remember drawing it.\n\n\"Did you do this?\" The Statue stood perfectly still.\n\nThe drawing was really, really good.\n\n\"Thanks,\" he said. He taped it to the wall right at her eye level.\n\nHe never saw her move. But every few weeks there was a new tiny drawing in the corner of his sketchpad.\n\nHe always left the green marker out.\n\nTHE END 🗽"}
 };
 
-// Tab switching
+// ── TABS ─────────────────────────────────────────────────────
 function showTab(name,el){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
@@ -268,10 +284,10 @@ function showTab(name,el){
   el.classList.add('active');
 }
 
-// Modal
-function setModal(title,content){
+// ── MODAL ────────────────────────────────────────────────────
+function setModal(title,html){
   document.getElementById('modal-title').textContent=title;
-  document.getElementById('modal-content').innerHTML=content;
+  document.getElementById('modal-content').innerHTML=html;
   document.getElementById('modal').classList.add('open');
 }
 function closeModal(){
@@ -280,17 +296,11 @@ function closeModal(){
 }
 document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
 
-// Link panel
-function openLink(name,emoji,desc,url,btn,cls){
-  setModal(name,'<div class="link-modal-body"><div class="link-modal-emoji">'+emoji+'</div><div class="link-modal-desc">'+desc+'</div><a class="link-modal-btn '+(cls||'')+'" href="'+url+'" target="_blank">'+btn+'</a></div>');
+function openLink(name,emoji,desc,url,btn){
+  setModal(name,'<div class="link-body"><div class="link-emoji">'+emoji+'</div><div class="link-desc">'+desc+'</div><a class="link-btn" href="'+url+'" target="_blank">'+btn+' ↗</a></div>');
 }
 
-// Game embed
-function openGame(name,emoji,desc,url){
-  setModal(name,'<div style="padding:12px 16px;background:#f0f7e8;font-size:13px;color:#3B6D11;font-weight:600">'+emoji+' '+desc+'</div><div class="game-wrap"><iframe src="'+url+'" allowfullscreen allow="gamepad *; autoplay"></iframe></div>');
-}
-
-// Stories
+// ── STORIES ──────────────────────────────────────────────────
 function readStory(key){
   var s=stories[key];
   document.getElementById('story-title').textContent=s.title;
@@ -304,75 +314,328 @@ function backToStories(){
   document.getElementById('story-view').style.display='none';
 }
 function filterStories(tag,el){
-  document.querySelectorAll('.story-filter').forEach(f=>f.classList.remove('active'));
+  document.querySelectorAll('.sf').forEach(f=>f.classList.remove('active'));
   el.classList.add('active');
   document.querySelectorAll('.story-card').forEach(function(c){
-    if(tag==='all'||c.dataset.tags.indexOf(tag)>-1) c.classList.remove('hidden');
+    if(tag==='all'||c.dataset.tags.indexOf(tag)>-1)c.classList.remove('hidden');
     else c.classList.add('hidden');
   });
 }
 function surpriseStory(){
   var cards=Array.from(document.querySelectorAll('.story-card:not(.hidden)'));
-  if(!cards.length) return;
-  var pick=cards[Math.floor(Math.random()*cards.length)];
-  pick.click();
+  if(cards.length)cards[Math.floor(Math.random()*cards.length)].click();
 }
 
-// Search
+// ── SEARCH (DuckDuckGo lite — embeds on page) ────────────────
 function doSearch(){
   var q=document.getElementById('search-input').value.trim();
-  if(!q) return;
-  window.open('https://www.google.com/search?q='+encodeURIComponent(q)+'&safe=active','_blank');
+  if(!q)return;
+  var frame=document.getElementById('search-frame');
+  var box=document.getElementById('search-results');
+  frame.src='https://duckduckgo.com/?q='+encodeURIComponent(q)+'&kp=1&kc=1&ko=-1&k1=-1';
+  box.style.display='block';
+  box.scrollIntoView({behavior:'smooth',block:'start'});
 }
-function quickSearch(q){
-  document.getElementById('search-input').value=q;
-  doSearch();
+function qs(q){document.getElementById('search-input').value=q;doSearch();}
+
+// ── GAMES ─────────────────────────────────────────────────────
+
+// BASKETBALL
+function openBasketball(){
+  setModal('Hoops! 🏀','<div class="game-area"><div class="game-score" id="bk-score">Score: 0 | Shots left: 10</div><canvas id="bk-canvas" width="480" height="320"></canvas><div class="game-msg" id="bk-msg">Click or tap the hoop area to shoot!</div><div class="game-controls"><button class="gc-btn gc-green" onclick="bkRestart()">Play Again</button></div></div>');
+  requestAnimationFrame(initBasketball);
+}
+function initBasketball(){
+  var canvas=document.getElementById('bk-canvas');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var score=0,shots=10,animId=null;
+  var ball={x:240,y:280,r:18,vx:0,vy:0,flying:false,made:false};
+  var hoop={x:240,y:90,w:80,rim:8};
+  var particles=[];
+  function randHoop(){hoop.x=80+Math.random()*320;}
+  randHoop();
+  function draw(){
+    ctx.clearRect(0,0,480,320);
+    // bg
+    ctx.fillStyle='#1a3a1a';ctx.fillRect(0,0,480,320);
+    // backboard
+    ctx.fillStyle='#fff';ctx.fillRect(hoop.x-50,hoop.y-50,100,60);
+    ctx.strokeStyle='#e53935';ctx.lineWidth=3;ctx.strokeRect(hoop.x-30,hoop.y-40,60,40);
+    // rim
+    ctx.strokeStyle='#e53935';ctx.lineWidth=5;
+    ctx.beginPath();ctx.moveTo(hoop.x-hoop.w/2,hoop.y);ctx.lineTo(hoop.x+hoop.w/2,hoop.y);ctx.stroke();
+    // net lines
+    ctx.strokeStyle='rgba(255,255,255,0.4)';ctx.lineWidth=1.5;
+    for(var i=0;i<=4;i++){
+      ctx.beginPath();
+      ctx.moveTo(hoop.x-hoop.w/2+i*(hoop.w/4),hoop.y);
+      ctx.lineTo(hoop.x-hoop.w/2+i*(hoop.w/4)+5,hoop.y+35);
+      ctx.stroke();
+    }
+    ctx.beginPath();ctx.moveTo(hoop.x-hoop.w/2+5,hoop.y+35);ctx.lineTo(hoop.x+hoop.w/2+5,hoop.y+35);ctx.stroke();
+    // particles
+    particles.forEach(function(p){
+      ctx.globalAlpha=p.life;
+      ctx.fillStyle=p.c;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
+      ctx.globalAlpha=1;
+    });
+    // ball
+    ctx.fillStyle='#e65100';ctx.beginPath();ctx.arc(ball.x,ball.y,ball.r,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle='#000';ctx.lineWidth=1.5;ctx.stroke();
+    ctx.strokeStyle='rgba(0,0,0,0.3)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.arc(ball.x,ball.y,ball.r,0,Math.PI);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(ball.x-ball.r,ball.y);ctx.lineTo(ball.x+ball.r,ball.y);ctx.stroke();
+  }
+  function update(){
+    if(!ball.flying)return;
+    ball.x+=ball.vx;ball.y+=ball.vy;ball.vy+=0.45;
+    // check made
+    if(!ball.made&&ball.y>hoop.y-5&&ball.y<hoop.y+15&&Math.abs(ball.x-hoop.x)<hoop.w/2-ball.r){
+      ball.made=true;score++;
+      for(var i=0;i<12;i++)particles.push({x:hoop.x,y:hoop.y,vx:(Math.random()-0.5)*4,vy:-Math.random()*4,r:Math.random()*6+3,life:1,c:['#ffeb3b','#4caf50','#2196f3','#e53935'][Math.floor(Math.random()*4)]});
+      document.getElementById('bk-msg').textContent='Nice shot! 🎉';
+    }
+    // update particles
+    particles.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=0.15;p.life-=0.03;});
+    particles=particles.filter(function(p){return p.life>0;});
+    // reset ball when off screen
+    if(ball.y>340||ball.x<-20||ball.x>500){
+      ball.flying=false;ball.x=240;ball.y=280;ball.vx=0;ball.vy=0;ball.made=false;
+      shots--;
+      updateScore();
+      if(shots<=0){
+        cancelAnimationFrame(animId);
+        document.getElementById('bk-msg').textContent='Game over! You scored '+score+' / 10 shots! 🏆';
+        return;
+      } else {
+        randHoop();
+        document.getElementById('bk-msg').textContent='Click or tap to shoot!';
+      }
+    }
+  }
+  function updateScore(){var el=document.getElementById('bk-score');if(el)el.textContent='Score: '+score+' | Shots left: '+shots;}
+  function loop(){draw();update();animId=requestAnimationFrame(loop);}
+  function shoot(cx,cy){
+    if(ball.flying)return;
+    var dx=cx-ball.x,dy=cy-ball.y;
+    var dist=Math.sqrt(dx*dx+dy*dy);
+    ball.vx=dx/dist*10;ball.vy=dy/dist*10-4;
+    ball.flying=true;
+  }
+  canvas.addEventListener('click',function(e){var r=canvas.getBoundingClientRect();shoot((e.clientX-r.left)*(480/r.width),(e.clientY-r.top)*(320/r.height));});
+  canvas.addEventListener('touchstart',function(e){e.preventDefault();var r=canvas.getBoundingClientRect();var t=e.touches[0];shoot((t.clientX-r.left)*(480/r.width),(t.clientY-r.top)*(320/r.height));},{passive:false});
+  window.bkRestart=function(){score=0;shots=10;ball.flying=false;ball.x=240;ball.y=280;particles=[];updateScore();randHoop();document.getElementById('bk-msg').textContent='Click or tap to shoot!';if(!animId)loop();};
+  loop();
 }
 
-// Drawing Studio
+// SNAKE
+function openSnake(){
+  setModal('Snake 🐍','<div class="game-area"><div class="game-score" id="sn-score">Score: 0</div><canvas id="sn-canvas" width="400" height="320" style="background:#0a2a0a;border-radius:8px"></canvas><div class="game-msg" id="sn-msg">Use arrow keys or swipe to move!</div><div class="game-controls"><button class="gc-btn gc-green" onclick="snRestart()">Restart</button></div></div>');
+  requestAnimationFrame(initSnake);
+}
+function initSnake(){
+  var canvas=document.getElementById('sn-canvas');if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var sz=20,cols=20,rows=16;
+  var snake,dir,nextDir,food,score,alive,loop;
+  function start(){
+    snake=[{x:10,y:8},{x:9,y:8},{x:8,y:8}];
+    dir={x:1,y:0};nextDir={x:1,y:0};
+    food=randFood();score=0;alive=true;
+    document.getElementById('sn-score').textContent='Score: 0';
+    document.getElementById('sn-msg').textContent='Arrow keys or swipe!';
+  }
+  function randFood(){
+    var f;do{f={x:Math.floor(Math.random()*cols),y:Math.floor(Math.random()*rows)};}
+    while(snake.some(function(s){return s.x===f.x&&s.y===f.y;}));return f;
+  }
+  function draw(){
+    ctx.fillStyle='#0a2a0a';ctx.fillRect(0,0,400,320);
+    // food
+    ctx.fillStyle='#e53935';ctx.beginPath();ctx.arc(food.x*sz+sz/2,food.y*sz+sz/2,sz/2-2,0,Math.PI*2);ctx.fill();
+    // snake
+    snake.forEach(function(s,i){
+      ctx.fillStyle=i===0?'#7fc97f':'#4caf50';
+      ctx.fillRect(s.x*sz+1,s.y*sz+1,sz-2,sz-2);
+    });
+  }
+  function tick(){
+    if(!alive)return;
+    dir=nextDir;
+    var head={x:snake[0].x+dir.x,y:snake[0].y+dir.y};
+    if(head.x<0||head.x>=cols||head.y<0||head.y>=rows||snake.some(function(s){return s.x===head.x&&s.y===head.y;})){
+      alive=false;document.getElementById('sn-msg').textContent='Game over! Score: '+score+' — try again!';return;
+    }
+    snake.unshift(head);
+    if(head.x===food.x&&head.y===food.y){score++;food=randFood();document.getElementById('sn-score').textContent='Score: '+score;}
+    else snake.pop();
+  }
+  var last=0;
+  function frame(ts){if(ts-last>120){tick();draw();last=ts;}loop=requestAnimationFrame(frame);}
+  document.onkeydown=function(e){
+    if(e.key==='ArrowUp'&&dir.y===0)nextDir={x:0,y:-1};
+    else if(e.key==='ArrowDown'&&dir.y===0)nextDir={x:0,y:1};
+    else if(e.key==='ArrowLeft'&&dir.x===0)nextDir={x:-1,y:0};
+    else if(e.key==='ArrowRight'&&dir.x===0)nextDir={x:1,y:0};
+  };
+  // touch swipe
+  var tx=0,ty=0;
+  canvas.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+  canvas.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;
+    if(Math.abs(dx)>Math.abs(dy)){if(dx>0&&dir.x===0)nextDir={x:1,y:0};else if(dx<0&&dir.x===0)nextDir={x:-1,y:0};}
+    else{if(dy>0&&dir.y===0)nextDir={x:0,y:1};else if(dy<0&&dir.y===0)nextDir={x:0,y:-1};}
+  },{passive:true});
+  window.snRestart=function(){cancelAnimationFrame(loop);start();loop=requestAnimationFrame(frame);};
+  start();loop=requestAnimationFrame(frame);
+}
+
+// BRICK BREAKER
+function openBreaker(){
+  setModal('Brick Breaker 🧱','<div class="game-area"><div class="game-score" id="br-score">Score: 0 | Lives: 3</div><canvas id="br-canvas" width="480" height="340" style="background:#111;border-radius:8px;cursor:none"></canvas><div class="game-msg" id="br-msg">Move mouse or finger to control the paddle!</div><div class="game-controls"><button class="gc-btn gc-blue" onclick="brRestart()">Restart</button></div></div>');
+  requestAnimationFrame(initBreaker);
+}
+function initBreaker(){
+  var canvas=document.getElementById('br-canvas');if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var W=480,H=340,cols=10,rows=5;
+  var paddle={w:90,h=12,x:195,y:310};
+  var ball={x:240,y:290,r:8,vx:3,vy:-4,active:false};
+  var bricks=[],score=0,lives=3,animId;
+  var colors=['#e53935','#e65100','#f9a825','#388e3c','#1565c0'];
+  function initBricks(){
+    bricks=[];
+    for(var r=0;r<rows;r++)for(var c=0;c<cols;c++)
+      bricks.push({x:c*(44)+8,y:r*28+30,w:40,h:22,alive:true,color:colors[r]});
+  }
+  function draw(){
+    ctx.fillStyle='#111';ctx.fillRect(0,0,W,H);
+    bricks.forEach(function(b){
+      if(!b.alive)return;
+      ctx.fillStyle=b.color;ctx.beginPath();ctx.roundRect(b.x,b.y,b.w,b.h,4);ctx.fill();
+    });
+    // paddle
+    ctx.fillStyle='#7fc97f';ctx.beginPath();ctx.roundRect(paddle.x,paddle.y,paddle.w,paddle.h,6);ctx.fill();
+    // ball
+    ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(ball.x,ball.y,ball.r,0,Math.PI*2);ctx.fill();
+  }
+  function update(){
+    if(!ball.active){ball.x=paddle.x+paddle.w/2;ball.y=paddle.y-ball.r-1;return;}
+    ball.x+=ball.vx;ball.y+=ball.vy;
+    if(ball.x<ball.r||ball.x>W-ball.r)ball.vx*=-1;
+    if(ball.y<ball.r)ball.vy*=-1;
+    if(ball.y>H){lives--;ball.active=false;document.getElementById('br-score').textContent='Score: '+score+' | Lives: '+lives;if(lives<=0){cancelAnimationFrame(animId);document.getElementById('br-msg').textContent='Game over! Score: '+score;return;}}
+    // paddle
+    if(ball.y+ball.r>paddle.y&&ball.y-ball.r<paddle.y+paddle.h&&ball.x>paddle.x&&ball.x<paddle.x+paddle.w){
+      ball.vy=Math.abs(ball.vy)*-1;ball.vx+=((ball.x-(paddle.x+paddle.w/2))/20);
+    }
+    // bricks
+    bricks.forEach(function(b){
+      if(!b.alive)return;
+      if(ball.x+ball.r>b.x&&ball.x-ball.r<b.x+b.w&&ball.y+ball.r>b.y&&ball.y-ball.r<b.y+b.h){
+        b.alive=false;ball.vy*=-1;score+=10;
+        document.getElementById('br-score').textContent='Score: '+score+' | Lives: '+lives;
+        if(bricks.every(function(br){return!br.alive;})){cancelAnimationFrame(animId);document.getElementById('br-msg').textContent='YOU WIN! 🎉 Score: '+score;}
+      }
+    });
+  }
+  canvas.addEventListener('mousemove',function(e){var r=canvas.getBoundingClientRect();paddle.x=Math.max(0,Math.min(W-paddle.w,(e.clientX-r.left)*(W/r.width)-paddle.w/2));});
+  canvas.addEventListener('touchmove',function(e){e.preventDefault();var r=canvas.getBoundingClientRect();paddle.x=Math.max(0,Math.min(W-paddle.w,(e.touches[0].clientX-r.left)*(W/r.width)-paddle.w/2));},{passive:false});
+  canvas.addEventListener('click',function(){if(!ball.active){ball.active=true;ball.vx=3;ball.vy=-4;document.getElementById('br-msg').textContent='Break all the bricks!';}});
+  canvas.addEventListener('touchstart',function(){if(!ball.active){ball.active=true;ball.vx=3;ball.vy=-4;document.getElementById('br-msg').textContent='Break all the bricks!';}},{passive:true});
+  window.brRestart=function(){cancelAnimationFrame(animId);score=0;lives=3;ball.active=false;ball.x=240;ball.y=290;initBricks();document.getElementById('br-score').textContent='Score: 0 | Lives: 3';document.getElementById('br-msg').textContent='Click to launch the ball!';animId=requestAnimationFrame(loop);};
+  function loop(){draw();update();animId=requestAnimationFrame(loop);}
+  initBricks();animId=requestAnimationFrame(loop);
+}
+
+// 2048
+function open2048(){
+  setModal('2048 🔢','<div style="padding:1rem;background:#faf8ef"><div class="game-score" style="color:#333;margin-bottom:.5rem" id="t-score">Score: 0</div><div id="t-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#bbada0;padding:8px;border-radius:8px;max-width:320px;margin:0 auto"></div><div class="game-msg" style="color:#555;margin-top:.75rem" id="t-msg">Swipe or use arrow keys. Merge tiles to reach 2048!</div><div class="game-controls" style="margin-top:.5rem"><button class="gc-btn gc-green" onclick="t2Restart()">New Game</button></div></div>');
+  requestAnimationFrame(init2048);
+}
+function init2048(){
+  if(!document.getElementById('t-grid'))return;
+  var board,score;
+  var colors={'':['#cdc1b4','#776e65'],'2':['#eee4da','#776e65'],'4':['#ede0c8','#776e65'],'8':['#f2b179','#f9f6f2'],'16':['#f59563','#f9f6f2'],'32':['#f67c5f','#f9f6f2'],'64':['#f65e3b','#f9f6f2'],'128':['#edcf72','#f9f6f2'],'256':['#edcc61','#f9f6f2'],'512':['#edc850','#f9f6f2'],'1024':['#edc53f','#f9f6f2'],'2048':['#edc22e','#f9f6f2']};
+  function start(){board=Array(4).fill(null).map(function(){return Array(4).fill(0);});score=0;addTile();addTile();render();}
+  function addTile(){var empty=[];for(var r=0;r<4;r++)for(var c=0;c<4;c++)if(!board[r][c])empty.push([r,c]);if(!empty.length)return;var pos=empty[Math.floor(Math.random()*empty.length)];board[pos[0]][pos[1]]=Math.random()<0.9?2:4;}
+  function render(){
+    var g=document.getElementById('t-grid');if(!g)return;
+    g.innerHTML='';
+    board.forEach(function(row){row.forEach(function(v){var k=v?String(v):'';var cl=colors[k]||['#3c3a32','#f9f6f2'];var d=document.createElement('div');d.style.cssText='background:'+cl[0]+';color:'+cl[1]+';height:70px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:'+(v>512?'18px':v>64?'22px':'26px')+';font-weight:700;font-family:inherit';d.textContent=v||'';g.appendChild(d);});});
+    document.getElementById('t-score').textContent='Score: '+score;
+  }
+  function slide(row){var r=row.filter(function(v){return v;});for(var i=0;i<r.length-1;i++){if(r[i]===r[i+1]){r[i]*=2;score+=r[i];r.splice(i+1,1);}}while(r.length<4)r.push(0);return r;}
+  function move(dir){var moved=false;var nb=board.map(function(r){return r.slice();});
+    if(dir==='left')nb=nb.map(function(r){var s=slide(r);if(s.join()!==r.join())moved=true;return s;});
+    else if(dir==='right')nb=nb.map(function(r){var s=slide(r.slice().reverse()).reverse();if(s.join()!==r.join())moved=true;return s;});
+    else if(dir==='up'){for(var c=0;c<4;c++){var col=nb.map(function(r){return r[c];});var s=slide(col);s.forEach(function(v,ri){if(v!==nb[ri][c])moved=true;nb[ri][c]=v;});}}
+    else if(dir==='down'){for(var c=0;c<4;c++){var col=nb.map(function(r){return r[c];}).reverse();var s=slide(col).reverse();s.forEach(function(v,ri){if(v!==nb[ri][c])moved=true;nb[ri][c]=v;});}}
+    if(moved){board=nb;addTile();render();}
+  }
+  document.onkeydown=function(e){
+    var map={'ArrowLeft':'left','ArrowRight':'right','ArrowUp':'up','ArrowDown':'down'};
+    if(map[e.key]){e.preventDefault();move(map[e.key]);}
+  };
+  var tx2=0,ty2=0;
+  var g=document.getElementById('t-grid');
+  g.addEventListener('touchstart',function(e){tx2=e.touches[0].clientX;ty2=e.touches[0].clientY;},{passive:true});
+  g.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-tx2,dy=e.changedTouches[0].clientY-ty2;if(Math.abs(dx)>Math.abs(dy))move(dx>0?'right':'left');else move(dy>0?'down':'up');},{passive:true});
+  window.t2Restart=function(){start();};
+  start();
+}
+
+// DRAWING STUDIO
+var gallery=[];
 function openDraw(){
-  var html='<div class="draw-wrap">'+
+  setModal('Drawing Studio 🎨',
     '<div class="draw-toolbar">'+
-      '<label>Color:</label>'+
-      ['#222222','#e53935','#1E88E5','#43A047','#FB8C00','#8E24AA','#F06292','#FFFFFF'].map(function(c,i){
-        return '<div class="color-btn'+(i===0?' active':'')+'" style="background:'+c+';'+(c==='#FFFFFF'?'border:2px solid #ccc':'')+'" onclick="setColor(\''+c+'\',this)"></div>';
-      }).join('')+
-      '<label style="margin-left:8px">Size:</label>'+
-      '<button class="size-btn active" onclick="setSize(4,this)">S</button>'+
-      '<button class="size-btn" onclick="setSize(10,this)">M</button>'+
-      '<button class="size-btn" onclick="setSize(20,this)">L</button>'+
-      '<button class="size-btn" onclick="setSize(40,this)">XL</button>'+
-      '<button class="draw-action" onclick="toggleEraser(this)">Eraser</button>'+
-      '<button class="draw-action red" onclick="clearCanvas()">Clear</button>'+
-      '<button class="draw-action" onclick="saveDrawing()">Save</button>'+
+    '<label>Color:</label>'+
+    ['#222','#e53935','#1E88E5','#43A047','#FB8C00','#8E24AA','#F06292','#fff'].map(function(c,i){
+      return '<div class="cb'+(i===0?' active':'')+'" style="background:'+c+';'+(c==='#fff'?'border:2px solid #ccc':'')+'" onclick="dcol(\''+c+'\',this)"></div>';
+    }).join('')+
+    '<label style="margin-left:6px">Size:</label>'+
+    '<button class="sb active" onclick="dsz(4,this)">S</button>'+
+    '<button class="sb" onclick="dsz(12,this)">M</button>'+
+    '<button class="sb" onclick="dsz(24,this)">L</button>'+
+    '<button class="sb" onclick="dsz(44,this)">XL</button>'+
+    '<button class="da" onclick="dera(this)" id="eraser-btn">Eraser</button>'+
+    '<button class="da red" onclick="dclr()">Clear</button>'+
+    '<button class="da" onclick="dsave()">Save to Gallery</button>'+
     '</div>'+
-    '<canvas id="drawCanvas"></canvas>'+
-  '</div>';
-  setModal('Maceo\'s Drawing Studio 🎨', html);
-  // Setup after DOM insert
+    '<canvas id="drawCanvas" height="380"></canvas>'+
+    '<div class="gallery" id="draw-gallery">'+(gallery.length?'<span class="gallery-label">Your saved drawings:</span>':'')+
+    gallery.map(function(src){return '<img src="'+src+'" onclick="window.open(\''+src+'\',\'_blank\')" title="Click to open full size">';}).join('')+
+    '</div>'
+  );
   requestAnimationFrame(function(){
-    var canvas=document.getElementById('drawCanvas');
+    var canvas=document.getElementById('drawCanvas');if(!canvas)return;
     var box=canvas.parentElement;
     canvas.width=box.offsetWidth||640;
-    canvas.height=400;
     canvas.style.background='#fff';
     var ctx=canvas.getContext('2d');
-    var drawing=false, color='#222222', size=4, erasing=false;
-    function getPos(e){
-      var r=canvas.getBoundingClientRect();
-      var src=e.touches?e.touches[0]:e;
-      return{x:(src.clientX-r.left)*(canvas.width/r.width),y:(src.clientY-r.top)*(canvas.height/r.height)};
-    }
-    function start(e){e.preventDefault();drawing=true;var p=getPos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);}
-    function move(e){e.preventDefault();if(!drawing)return;var p=getPos(e);ctx.lineTo(p.x,p.y);ctx.strokeStyle=erasing?'#ffffff':color;ctx.lineWidth=size;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();}
-    function stop(e){drawing=false;}
+    var drawing=false,color='#222',size=4,erasing=false;
+    function pos(e){var r=canvas.getBoundingClientRect();var s=e.touches?e.touches[0]:e;return{x:(s.clientX-r.left)*(canvas.width/r.width),y:(s.clientY-r.top)*(canvas.height/r.height)};}
+    function start(e){e.preventDefault();drawing=true;var p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);}
+    function move(e){e.preventDefault();if(!drawing)return;var p=pos(e);ctx.lineTo(p.x,p.y);ctx.strokeStyle=erasing?'#fff':color;ctx.lineWidth=size;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();}
+    function stop(){drawing=false;}
     canvas.addEventListener('mousedown',start);canvas.addEventListener('mousemove',move);canvas.addEventListener('mouseup',stop);canvas.addEventListener('mouseleave',stop);
     canvas.addEventListener('touchstart',start,{passive:false});canvas.addEventListener('touchmove',move,{passive:false});canvas.addEventListener('touchend',stop);
-    window.setColor=function(c,el){color=c;erasing=false;document.querySelectorAll('.color-btn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');};
-    window.setSize=function(s,el){size=s;document.querySelectorAll('.size-btn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');};
-    window.toggleEraser=function(el){erasing=!erasing;el.style.background=erasing?'#3B6D11':'';el.style.color=erasing?'#fff':'';};
-    window.clearCanvas=function(){ctx.clearRect(0,0,canvas.width,canvas.height);};
-    window.saveDrawing=function(){var a=document.createElement('a');a.download='maceo-drawing.png';a.href=canvas.toDataURL();a.click();};
+    window.dcol=function(c,el){color=c;erasing=false;document.querySelectorAll('.cb').forEach(function(b){b.classList.remove('active');});el.classList.add('active');var eb=document.getElementById('eraser-btn');if(eb){eb.style.background='';eb.style.color='';}};
+    window.dsz=function(s,el){size=s;document.querySelectorAll('.sb').forEach(function(b){b.classList.remove('active');});el.classList.add('active');};
+    window.dera=function(el){erasing=!erasing;el.style.background=erasing?'#3B6D11':'';el.style.color=erasing?'#fff':'';};
+    window.dclr=function(){ctx.clearRect(0,0,canvas.width,canvas.height);};
+    window.dsave=function(){
+      var img=canvas.toDataURL('image/png');
+      gallery.push(img);
+      var g=document.getElementById('draw-gallery');
+      if(g){
+        if(gallery.length===1){var lbl=document.createElement('span');lbl.className='gallery-label';lbl.textContent='Your saved drawings:';g.appendChild(lbl);}
+        var im=document.createElement('img');im.src=img;im.title='Click to open full size';im.onclick=function(){window.open(img,'_blank');};g.appendChild(im);
+      }
+    };
   });
 }
 </script>
