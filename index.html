@@ -240,11 +240,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f7e8;min-heigh
       <button class="qchip" onclick="qs('how do rockets work for kids')">How do rockets work?</button>
       <button class="qchip" onclick="qs('cool science experiments for kids at home')">Science experiments</button>
     </div>
-    <p class="search-note">Safe search is always on. Results open right here on the page.</p>
+    <p class="search-note">Safe search is always on. Opens in a new tab — kid-friendly results only.</p>
   </div>
-  <div class="search-results" id="search-results">
-    <iframe id="search-frame" title="Search results"></iframe>
-  </div>
+
 </div>
 
 <!-- ABOUT -->
@@ -330,11 +328,7 @@ function surpriseStory(){
 function doSearch(){
   var q=document.getElementById('search-input').value.trim();
   if(!q)return;
-  var frame=document.getElementById('search-frame');
-  var box=document.getElementById('search-results');
-  frame.src='https://duckduckgo.com/?q='+encodeURIComponent(q)+'&kp=1&kc=1&ko=-1&k1=-1';
-  box.style.display='block';
-  box.scrollIntoView({behavior:'smooth',block:'start'});
+  window.open('https://duckduckgo.com/?q='+encodeURIComponent(q)+'&kp=1&kc=1&ko=-1&k1=-1','_blank');
 }
 function qs(q){document.getElementById('search-input').value=q;doSearch();}
 
