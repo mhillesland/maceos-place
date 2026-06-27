@@ -501,7 +501,7 @@ function initBreaker(){
   var canvas=document.getElementById('br-canvas');if(!canvas)return;
   var ctx=canvas.getContext('2d');
   var W=480,H=340,cols=10,rows=5;
-  var paddle={w:90,h=12,x:195,y:310};
+  var paddle={w:90,h:12,x:195,y:310};
   var ball={x:240,y:290,r:8,vx:3,vy:-4,active:false};
   var bricks=[],score=0,lives=3,animId;
   var colors=['#e53935','#e65100','#f9a825','#388e3c','#1565c0'];
